@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/scallingWrapper"
+        android:layout_width="650px"
+        android:layout_height="305px"
+        android:background="#FFFFFF" >
+
+        <RelativeLayout
+            android:id="@+id/recentEventslayout"
+            android:layout_width="match_parent"
+            android:layout_height="150px" >
+
+            <CheckBox
+                android:id="@+id/recentEventCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="30px" />
+
+            <TextView
+                android:id="@+id/recentEventText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10px"
+                android:layout_toRightOf="@+id/recentEventCheckBox"
+                android:text="@string/troublespot_show_recent_events"
+                android:textColor="#222222"
+                android:textSize="18dp" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/separator"
+            android:layout_width="fill_parent"
+            android:layout_height="2px"
+            android:layout_below="@+id/recentEventslayout"
+            android:background="#3C3D3E" />
+        <RelativeLayout
+            android:id="@+id/allEventslayout"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/separator"
+            android:layout_height="150px" >
+
+            <CheckBox
+                android:id="@+id/allEventCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="30px" />
+
+            <TextView
+                android:id="@+id/allEventText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10px"
+                android:layout_toRightOf="@+id/allEventCheckBox"
+                android:text="@string/troublespot_show_all_events"
+                android:textColor="#222222"
+                android:textSize="18dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

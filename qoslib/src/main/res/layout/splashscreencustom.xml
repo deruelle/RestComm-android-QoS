@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/splashcustom_bg" >
+
+    <ImageView
+        android:id="@+id/attLogo"
+        android:layout_width="271px"
+        android:layout_height="417px"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="300px"
+        android:background="@drawable/main_custom_logo" />
+
+    <ImageView
+        android:layout_width="321px"
+        android:layout_height="205px"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="850px"
+        android:background="@drawable/mmc_logo" />
+
+</RelativeLayout>

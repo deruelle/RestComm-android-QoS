@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="gifimageview-1.2.0">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/examples/Restcomm_demo/app/build/intermediates/exploded-aar/com.felipecsl/gifimageview/1.2.0/res" />
+      <root url="jar://$PROJECT_DIR$/examples/Restcomm_demo/app/build/intermediates/exploded-aar/com.felipecsl/gifimageview/1.2.0/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <RelativeLayout 
+        android:id="@+id/listViewItemBackground"
+        android:layout_width="fill_parent"
+   		android:layout_height="wrap_content"
+   		android:background="#f2f2f2" >
+  
+	    <TextView
+	        android:id="@+id/lineLabelTextView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginLeft="30px"
+	        android:textStyle="bold"
+	        android:textSize="18sp"
+	        android:text="@string/transitsampling_line" />
+	
+	    <TextView
+	        android:id="@+id/lineNameTextView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="16sp"
+	        android:layout_alignParentTop="true"
+	        android:lines="1"
+	        android:layout_toRightOf="@+id/lineLabelTextView"
+	        android:text="Test" />
+	
+	    <TextView
+	        android:id="@+id/fromLabelTextView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_marginLeft="30px"
+	        android:textSize="14sp"
+	        android:textStyle="bold"
+	        android:layout_below="@+id/lineLabelTextView"
+	        android:text="@string/transitsampling_from" />
+	    
+	    <TextView 
+	        android:id="@+id/fromTextView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@+id/fromLabelTextView"
+	        android:layout_alignBottom="@+id/fromLabelTextView"
+	        android:layout_toLeftOf="@+id/view"
+	        android:layout_below="@+id/lineNameTextView"
+	        android:layout_above="@+id/toTextView"
+	        android:lines="1"
+	        android:text="depart"
+	        android:layout_marginLeft="10px"
+	        android:textSize="16sp" />
+	    
+	      <TextView
+	        android:id="@+id/toLabelTextView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_marginLeft="30px"
+	        android:textSize="14sp"
+	        android:textStyle="bold"
+	        android:layout_below="@+id/fromLabelTextView"
+	        android:text="@string/transitsampling_to" />
+	    
+	    <TextView 
+	        android:id="@+id/toTextView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@+id/toLabelTextView"
+	        android:layout_alignBottom="@+id/toLabelTextView"
+	        android:text="arrive"
+	        android:lines="1"
+	        android:layout_toLeftOf="@+id/view"
+	        android:layout_marginLeft="10px"
+	        android:textSize="16sp" />
+	    
+	     <View
+	        android:id="@+id/view"
+	        android:layout_width="4px"
+	        android:layout_height="fill_parent"
+	        android:background="#ffffff"
+	        android:layout_marginTop="33px"
+	        android:layout_marginLeft="10px"
+	        android:layout_toLeftOf="@+id/trashcanImageView"
+	        android:layout_centerHorizontal="true" />
+
+	     <Button
+	         android:id="@+id/trashcanImageView"
+	         android:layout_width="24dp"
+	         android:layout_height="24dp"
+	         android:layout_alignParentRight="true"
+	         android:layout_centerVertical="true"
+	         android:layout_marginRight="20px"
+	         android:layout_marginLeft="20px"
+
+	         android:background="@drawable/trash_icon_dark" />
+    
+    </RelativeLayout>
+	    
+</RelativeLayout>

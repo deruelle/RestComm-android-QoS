@@ -1,0 +1,5 @@
+include ':qoslib', ':app'
+include ':restcomm.android.client.sdk'
+project(':restcomm.android.client.sdk').projectDir = new File(settingsDir, '../restcommsdk/restcomm-android-sdk/restcomm.android.client.sdk')
+include ':examples/Restcomm_demo/app'
+project(':app').projectDir = new File('examples/Restcomm_demo/app')

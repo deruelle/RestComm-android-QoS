@@ -1,0 +1,68 @@
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tableLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:stretchColumns="*"
+    android:gravity="center"
+    android:layout_centerHorizontal="true"
+    android:splitMotionEvents="false" >
+    
+    <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content">
+		<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
+			<Button
+			    android:id="@+id/transitIconOn3rd"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:background="@drawable/dashboard_transit"
+			    android:onClick="myTransitClicked" />
+			
+			<TextView
+			    android:id="@+id/transitTextOn3rd"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:gravity="center_horizontal"
+			    android:text="@string/transitsampling_title"
+			    android:textColor="#666666"
+			    android:textSize="16sp" />
+		</LinearLayout>
+		
+		<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:orientation="vertical" android:gravity="center">
+		    	<Button
+			    android:id="@+id/mappingIconOn3rd"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:background="@drawable/dashboard_mapping"
+			    android:visibility="invisible"
+			    android:onClick="myMappingClicked" />
+			
+			<TextView
+			    android:id="@+id/mappingTextOn3rd"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:gravity="center_horizontal"
+			    android:visibility="invisible"
+			    android:text="@string/mycoverage_manual_mapping"
+			    android:textColor="#666666"
+			    android:textSize="16sp" />
+		</LinearLayout>
+	</TableRow>
+	<TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp">
+		<!-- dummy view -->
+		<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:orientation="vertical" android:gravity="center">
+	    	<Button
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:background="@drawable/dashboard_mapping"
+			    android:visibility="invisible"/>
+			<TextView
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:gravity="center_horizontal"
+			    android:textColor="#666666"
+			    android:visibility="invisible"
+			    android:textSize="16sp" />
+		</LinearLayout>
+	</TableRow>
+
+</TableLayout>

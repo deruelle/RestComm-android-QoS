@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:title="@string/dashboard_menu_settings" android:icon="@android:drawable/ic_menu_preferences" android:id="@+id/dashboard_menuitem_settings"/>
+    <item android:id="@+id/dashboard_menuitem_toggleservice" android:icon="@android:drawable/ic_lock_power_off"/>
+    <item android:title="@string/dashboard_engineer" android:icon="@drawable/ic_menu_nerd"  android:id="@+id/dashboard_menu_livestatus"></item>
+    <item android:title="Log" android:icon="@android:drawable/ic_menu_save" android:id="@+id/dashboard_menu_log"></item>
+    <item android:id="@+id/dashboard_menu_Email_Csv" android:icon="@android:drawable/ic_menu_send" android:title="@string/GenericText_EmailRaw"></item>
+	<item android:id="@+id/dashboard_menu_help" android:icon="@android:drawable/ic_menu_help" android:title="Help" />
+    
+</menu>

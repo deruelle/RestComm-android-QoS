@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="660px"
+    android:layout_height="100px" >
+
+    <TextView
+        android:id="@+id/troubleName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10px"
+        android:text="Dropped call"
+        android:textColor="#222222"
+        android:textSize="22dp" />
+
+    <View
+        android:id="@+id/horizontalSeparator"
+        android:layout_width="2px"
+        android:layout_height="70px"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="500px"
+        android:background="#4F000000" />
+
+    <ImageView
+        android:id="@+id/troubleIcon"
+        android:layout_width="66px"
+        android:layout_height="66px"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="30px"
+        android:layout_toRightOf="@+id/horizontalSeparator"
+        android:background="@drawable/antenna_icon" />
+
+    <View
+        android:id="@+id/verticalSeparator"
+        android:layout_width="fill_parent"
+        android:layout_height="2px"
+        android:layout_marginTop="98px"
+        android:background="#4F000000" />
+
+</RelativeLayout>

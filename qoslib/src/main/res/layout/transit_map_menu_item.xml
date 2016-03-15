@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <RelativeLayout 
+        android:id="@+id/listViewItemBackground"
+        android:layout_width="fill_parent"
+   		android:layout_height="80px"
+   		android:background="#f2f2f2"  >
+  
+	    <ImageView
+	        android:id="@+id/mapMenuImageView"
+	        android:layout_width="70px"
+	        android:layout_height="70px"
+	        android:layout_alignParentLeft="true"
+	        android:layout_centerVertical="true"
+	        android:background="@drawable/train_station_icon_ts"
+	        android:layout_marginLeft="15px"/>
+
+	    <TextView
+	        android:id="@+id/mapMenuTextView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerVertical="true"
+	        android:lines="1"
+	        android:layout_toRightOf="@+id/mapMenuImageView"
+	        android:layout_toLeftOf="@+id/mapMenuProblemImageView"
+	        android:paddingLeft="5px"
+	        android:paddingRight="5px"
+	        android:text="textview"
+	        android:textSize="16sp" />
+	
+	    <ImageView
+	        android:id="@+id/mapMenuProblemImageView"
+	        android:layout_width="70px"
+	        android:layout_height="70px"
+	        android:layout_alignParentRight="true"
+	        android:layout_centerVertical="true"
+	        android:background="@drawable/alert_sample_grey"
+	        android:layout_marginRight="15px"/>
+	        
+    </RelativeLayout>
+	    
+</RelativeLayout>

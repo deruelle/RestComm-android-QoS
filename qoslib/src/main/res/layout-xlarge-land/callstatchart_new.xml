@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/compare_webstats"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:weightSum="1"
+    android:orientation="vertical" >
+
+    <com.cortxt.app.MMC.ActivitiesOld.CustomViews.Atomic.CompareTitleView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:text="@string/mystats_mycallstats"
+        android:layout_weight="0.1" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:weightSum="1.0"
+        android:layout_weight="0.85" >
+
+		<View 
+            android:layout_width="0dip"
+			android:layout_height="fill_parent"
+			android:background="#0000"
+			android:layout_weight="0.15"/>
+        
+        <com.cortxt.app.MMC.ActivitiesOld.CustomViews.CallStatChartNew
+            android:id="@+id/stats_chart"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.4" />
+
+        <com.cortxt.app.MMC.ActivitiesOld.CustomViews.LegendViewNew
+            android:id="@+id/stats_legend"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4" />
+    </LinearLayout>
+
+</LinearLayout>

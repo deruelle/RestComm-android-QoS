@@ -1,0 +1,231 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${packageName}.${activityClass}" >
+
+    <View 
+    	android:id="@+id/dummyView"
+    	android:layout_height="fill_parent"
+    	android:layout_width="fill_parent"
+    	android:layout_alignParentTop="true" 
+    	 >
+        
+    </View>
+    
+<!-- Action bar -->
+    
+       <RelativeLayout
+            android:id="@+id/topactionbarLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="96px"
+            android:background="@color/title_background" >
+
+            <ImageButton
+                android:id="@+id/actionBarBackButton"
+                android:layout_width="64px"
+                android:layout_height="96px"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:onClick="onExitClicked"
+                android:src="@drawable/ic_action_back_icon" />
+
+            <ImageView
+                android:id="@+id/actionBarLogo"
+                android:layout_width="60px"
+                android:layout_height="60px"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="30px"
+                android:layout_toRightOf="@+id/actionBarBackButton"
+                android:background="@drawable/action_bar_logo"
+                android:onClick="onExitClicked" />
+
+            <TextView
+                android:id="@+id/actionbartitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="6px"
+                android:layout_toRightOf="@+id/actionBarLogo"
+                android:onClick="onMappingOptions"
+                android:text="@string/transitsampling_main_title"
+                android:textColor="#666666"
+                android:textSize="18sp" />
+
+             <Button
+                android:id="@+id/actionbarLibraryButton"
+                android:layout_width="64px"
+                android:layout_height="64px"
+                android:layout_alignBottom="@+id/actionbarHistoryIcon"
+                android:layout_toRightOf="@+id/actionbartitle"
+                android:layout_alignTop="@+id/actionbarHistoryIcon"
+                android:background="@drawable/ic_green_cross_marker"
+                android:visibility="gone"
+                android:onClick="onLibrary" />
+             
+            <Button
+                android:id="@+id/actionbarSettingsButton"
+                android:layout_width="64px"
+                android:layout_height="64px"
+                android:layout_marginLeft="10px"
+                android:layout_alignBottom="@+id/actionbarLibraryButton"
+                android:layout_toRightOf="@+id/actionbarLibraryButton"
+                android:layout_alignTop="@+id/actionbarLibraryButton"
+                android:background="@drawable/settings_white"
+                android:visibility="gone"
+                android:onClick="onSettings" />
+
+            <Button
+                android:id="@+id/actionbarHistoryIcon"
+                android:layout_width="64px"
+                android:layout_height="64px"
+                android:layout_alignTop="@+id/actionBarLogo"
+                android:layout_marginLeft="10px"
+                android:layout_marginRight="10px"
+                android:layout_toRightOf="@+id/actionbarSettingsButton"
+                android:background="@drawable/history_white"
+                android:visibility="gone"
+                android:onClick="onHistory" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/topactionbarLine"
+            android:layout_width="fill_parent"
+            android:layout_height="4px"
+            android:layout_below="@+id/topactionbarLayout"
+            android:background="#3399cc" 
+            android:gravity="center_vertical" />
+
+        <RelativeLayout
+            android:id="@+id/menuLinearLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="96px"
+            android:layout_below="@+id/topactionbarLine"
+            android:gravity="center_vertical" >
+
+            <Button
+                android:id="@+id/addButton"
+                android:layout_width="240px"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10px"
+                android:layout_marginTop="10px"
+                android:layout_marginBottom="10px"
+              	android:background="#cccbcb"
+                android:onClick="onAdd"
+                android:text="@string/transitsampling_add" />
+
+            <TextView
+                android:id="@+id/itineraryTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/transitsampling_itinerary_list"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            
+         </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/itineraryBackgroundLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:background="#cccccc"
+            android:layout_below="@+id/menuLinearLayout">
+
+            <ImageView
+                android:id="@+id/transitBgImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/transit_bg"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="120px" />
+            
+            <TextView 
+                android:id="@+id/noItinerariesTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:text="@string/transitsampling_no_itineraries"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#666666"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15px"
+                android:layout_below="@+id/transitBgImageView" />
+
+            <TextView 
+                android:id="@+id/addItineraryTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:text="@string/transitsampling_no_itineraries_add"
+                android:textSize="18sp"
+                android:textColor="#666666"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5px"
+                android:layout_below="@+id/noItinerariesTextView" />
+            
+            <ListView
+		        android:id="@+id/transitListView"
+		        android:layout_height="wrap_content"
+		        android:layout_width="match_parent" >
+    </ListView>
+    
+        </RelativeLayout>
+        
+        <RelativeLayout 
+        android:id="@+id/undobar" 
+        android:layout_width="match_parent"
+        android:layout_height="48px"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="20px"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="32px"
+        android:layout_alignParentBottom="true"
+        android:background="#444444"
+        android:clickable="true" >
+        
+        <TextView 
+            android:id="@+id/undoTextView" 
+            android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="32px"
+			android:layout_gravity="center_vertical"
+			android:layout_marginRight="32px"
+			android:textSize="16sp"
+			android:layout_centerVertical="true"
+			android:text="@string/transitsampling_itinerary_deleted_msg"
+			android:textColor="#ffffff"  />
+        
+        <View
+            android:id="@+id/undoView" 
+            android:layout_width="3px"
+            android:layout_height="24px"
+            android:background="#666666"
+            android:layout_toLeftOf="@+id/undoButton"
+            android:layout_centerVertical="true" />
+
+        
+        <Button 
+            android:id="@+id/undoButton" 
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:drawableLeft="@drawable/back_arrow_icon"
+            android:paddingLeft="15px"
+            android:paddingRight="32px"
+            android:drawablePadding="4px"
+            android:background="#444444"
+            android:textColor="#ffffff"
+            android:layout_alignParentRight="true"
+            android:text="@string/transitsampling_undo_message"
+            />
+        
+    </RelativeLayout>
+        
+</RelativeLayout>

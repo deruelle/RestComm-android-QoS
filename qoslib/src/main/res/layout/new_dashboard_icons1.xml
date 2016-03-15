@@ -1,0 +1,94 @@
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tableLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:layout_centerHorizontal="true"
+    android:orientation="vertical"
+	android:stretchColumns="*"
+    android:splitMotionEvents="false" >
+    
+    <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content">
+	    <LinearLayout android:orientation="vertical" android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent">
+		    <Button
+		        android:id="@+id/mapIcon"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="0px"
+		        android:layout_marginTop="0px"
+		        android:background="@drawable/dashboard_mycoverage"
+		        android:onClick="myCoverageClicked" />
+		
+		    <TextView
+		        android:id="@+id/mapText"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginTop="0px"
+		        android:gravity="center_horizontal"
+		        android:text="@string/dashboard_maps"
+		        android:textColor="#4D4D4D"
+		        android:textSize="16sp" />
+		</LinearLayout>
+		
+	    <LinearLayout android:orientation="vertical" android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+		    <Button
+		        android:id="@+id/CompareStatsIcon"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:background="@drawable/dashboard_mystats"
+		        android:onClick="myStatsClicked" />
+		
+		    <TextView
+		        android:id="@+id/CompareText"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:gravity="center_horizontal"
+		        android:text="@string/dashboard_compare"
+		        android:textColor="#666666"
+		        android:textSize="16sp" />
+
+	    </LinearLayout>
+
+	</TableRow>
+
+    <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp">
+		<LinearLayout android:orientation="vertical" android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent">
+		    <Button
+		        android:id="@+id/TroubleTweetIcon"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:background="@drawable/dashboard_troublespot"
+		        android:onClick="troubleSpotClicked" />
+		
+		    <TextView
+		        android:id="@+id/TroubleTweetText"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:gravity="center_horizontal"
+		        android:text="@string/dashboard_trouble"
+		        android:textColor="#666666"
+		        android:textSize="16sp" />
+		</LinearLayout>
+	
+		<LinearLayout android:orientation="vertical" android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent">
+		    <Button
+		        android:id="@+id/speedIcon"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:background="@drawable/dashboard_speedtest"
+		        android:onClick="speedTestClicked" />
+		
+		    <TextView
+		        android:id="@+id/SpeedText"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:gravity="center_horizontal"
+		        android:text="@string/dashboard_speed"
+		        android:textColor="#666666"
+		        android:textSize="16sp" />
+	    </LinearLayout>
+	    
+	</TableRow>
+
+</TableLayout>

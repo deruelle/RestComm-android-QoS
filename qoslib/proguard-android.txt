@@ -1,0 +1,124 @@
+# TODO : if possible, change configuration to only obfuscate classes in DataCollectors.EventMonitors
+# without having to -keep option for every other class
+
+
+# Libraries referenced in libs/xmltask.jar cause warnings which cause the build to fail
+# but xmltask is only used by ant, not by the app, so these warnings can be ignored
+-dontwarn com.oopsconsultancy.xmltask.**
+-dontwarn org.osmdroid.**
+-dontwarn android.support.v4.**
+-dontskipnonpubliclibraryclassmembers
+
+-optimizationpasses 5
+-dontusemixedcaseclassnames
+-dontskipnonpubliclibraryclasses
+-dontpreverify
+-optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
+# -libraryjars libs/httpmime-4.0.1.jar
+
+-keep class * extends android.app.Activity
+-keep class * extends android.app.Application
+-keep class * extends android.app.Service
+-keep class * extends android.content.BroadcastReceiver
+-keep class * extends android.content.ContentProvider
+-keep class com.android.internal.telephony.ITelephony { *; }
+
+-keep class com.cortxt.app.MMC.Activities.** {
+  *;
+}
+-keep class com.cortxt.app.MMC.ActivitiesOld.** {
+  *;
+}
+-keep class com.cortxt.app.MMC.UtilsOld.** {
+  *;
+}
+-keep class com.cortxt.app.MMC.WebServicesOld.** {
+  *;
+}
+
+-keep class com.cortxt.app.MMC.Reporters.** {
+  *;
+}
+
+-keep class com.cortxt.app.MMC.Utils.** {
+  *;
+}
+
+-keep class com.cortxt.app.MMC.Exceptions.** {
+  *;
+}
+
+-keep class com.cortxt.app.MMC.DataCollectors.** {
+  *;
+}
+
+-keep class com.cortxt.app.MMC.DataCollectors.Events.** {
+  *;
+}
+
+-keep class com.cortxt.app.MMC.DataCollectors.EventTriggers.** {
+  *;
+}
+
+-keep class com.cortxt.app.MMC.DataCollectors.Samples.** {
+  *;
+}
+
+-keep class com.cortxt.app.MMC.DataCollectors.Samplers.** {
+  *;
+}
+
+-keepclassmembers class * extends android.content.Context {
+public void *(android.view.View);
+  public void *(android.view.MenuItem);
+}
+
+-keepclassmembers class * implements android.os.Parcelable {
+  static android.os.Parcelable$Creator CREATOR;
+}
+
+-keep class * implements android.os.Parcelable {
+  public static final android.os.Parcelable$Creator *;
+}
+
+-keep class **.R$* {
+  public static <fields>;
+}
+
+-keepclassmembers enum * {
+  public static **[] values();
+  public static ** valueOf(java.lang.String);
+}
+
+#ACRA specifics
+# we need line numbers in our stack traces otherwise they are pretty useless
+-renamesourcefileattribute SourceFile
+-keepattributes SourceFile,LineNumberTable
+
+# ACRA needs "annotations" so add this... 
+-keepattributes *Annotation*
+
+# keep this class so that logging will show 'ACRA' and not a obfuscated name like 'a'.
+# Note: if you are removing log messages elsewhere in this file then this isn't necessary
+-keep class org.acra.ACRA {
+  *;
+}
+
+# keep this around for some enums that ACRA needs
+-keep class org.acra.ReportingInteractionMode {
+  *;
+}
+
+# keep this otherwise it is removed by ProGuard
+-keep public class org.acra.ErrorReporter {
+  public org.acra.ErrorReporter$ReportsSenderWorker handleSilentException(java.lang.Throwable);
+  public Thread handleSilentException(java.lang.Throwable);
+  public void addCustomData(java.lang.String,java.lang.String);
+  public void addCustomData(java.lang.String,java.lang.String);
+  public void putCustomData(java.lang.String,java.lang.String);
+  public void removeCustomData(java.lang.String);
+}
+
+-keepclassmembers class org.acra.ReportField {
+  public static <fields>;
+}

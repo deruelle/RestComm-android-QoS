@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <include
+        android:id="@+id/firstRanking"
+        android:layout_width="match_parent"
+        android:layout_height="245px" 
+        layout="@layout/ranking_row"
+        />
+    <include
+        android:id="@+id/secondRanking"
+        android:layout_width="match_parent"
+        android:layout_height="245px"
+        android:layout_below="@+id/firstRanking"
+        layout="@layout/ranking_row"
+        />
+    <include
+        android:id="@+id/thirdRanking"
+        android:layout_width="match_parent"
+        android:layout_height="245px" 
+        android:layout_below="@+id/secondRanking"
+        layout="@layout/ranking_row"
+        />
+    <include
+        android:id="@+id/fourthRanking"
+        android:layout_width="match_parent"
+        android:layout_height="245px" 
+        android:layout_below="@+id/thirdRanking"
+        layout="@layout/ranking_row"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,146 @@
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tableLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:layout_centerHorizontal="true"
+    android:stretchColumns="*"
+    android:splitMotionEvents="false" >
+	
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        
+		<LinearLayout android:layout_width="fill_parent" android:orientation="vertical" android:layout_height="wrap_content" android:gravity="center">
+			<Button
+			    android:id="@+id/engineeringIcon"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:background="@drawable/dashboard_engineering"
+			    android:onClick="nerdModeClicked" />
+			
+			<TextView
+			    android:id="@+id/engineeringText"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:gravity="center_horizontal"
+			    android:text="@string/dashboard_engineer"
+			    android:textColor="#666666"
+				android:textSize="16sp" />
+		</LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+			<Button
+			    android:id="@+id/SettingsIcon"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:background="@drawable/dashboard_settings"
+			    android:onClick="settingsClicked" />
+			
+			<TextView 		
+			    android:id="@+id/SettingsText"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:gravity="center_horizontal"
+			    android:text="@string/dashboard_menu_settings"
+			    android:textColor="#666666"
+			    android:textSize="16sp" />
+		</LinearLayout>
+	</TableRow>
+	
+	<TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp">
+		<LinearLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"
+		    android:gravity="center">
+			
+			<Button
+			    android:id="@+id/RawDataIcon"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:background="@drawable/dashboard_rawdata"
+			    android:onClick="rawDataClicked" />
+			
+			<TextView
+			    android:id="@+id/RawDataText"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:gravity="center_horizontal"
+			    android:text="@string/GenericText_EmailRaw2"
+			    android:textColor="#666666"
+			    android:textSize="16sp" />
+		</LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+			<Button
+			    android:id="@+id/SurveysIcon"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_centerHorizontal="true"
+			    android:background="@drawable/dashboard_survey_default"
+			    android:onClick="surveysClicked" />
+			
+			<TextView
+			    android:id="@+id/SurveysText"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="@string/dashboard_surveys"
+			    android:layout_centerHorizontal="true"
+			    android:layout_below="@id/SurveysIcon"
+			    android:textColor="#666666"
+			    android:textSize="16sp" />
+
+			<Button
+			    android:id="@+id/mappingIcon"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_centerHorizontal="true"
+			    android:background="@drawable/dashboard_mapping"
+			    android:visibility="invisible"
+			    android:onClick="myMappingClicked" />
+			
+			<TextView
+			    android:id="@+id/mappingText"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_centerHorizontal="true"
+			    android:visibility="invisible"
+			    android:layout_below="@id/mappingIcon"
+			    android:text="@string/mycoverage_manual_mapping"
+			    android:textColor="#666666"
+			    android:textSize="16sp" />
+			
+			<Button
+			    android:id="@+id/transitIcon"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_centerHorizontal="true"
+			    android:background="@drawable/dashboard_transit"
+			    android:visibility="invisible"
+			    android:onClick="myTransitClicked" />
+			
+			<TextView
+			    android:id="@+id/transitText"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_centerHorizontal="true"
+			    android:visibility="invisible"
+			    android:layout_below="@id/mappingIcon"
+			    android:text="@string/transitsampling_title"
+			    android:textColor="#666666"
+			    android:textSize="16sp" />
+		</RelativeLayout>
+
+	</TableRow>
+</TableLayout>

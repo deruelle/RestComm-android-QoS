@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="libjingle_peerconnection_java">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../restcommsdk/restcomm-android-sdk/restcomm.android.client.sdk/libs/libjingle_peerconnection_java.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

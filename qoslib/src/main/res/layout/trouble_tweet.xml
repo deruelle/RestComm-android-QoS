@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/troublespot_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <View
+        android:id="@+id/centralBackground"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/background" />
+
+    <RelativeLayout
+        android:id="@+id/topactionbarLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="96px"
+        android:background="@color/title_background" >
+
+        <ImageButton
+            android:id="@+id/actionBarBackButton"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:padding="10px"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_action_back_icon"
+            android:background="@null"
+            android:onClick="backActionClicked" />
+
+        <ImageView
+            android:id="@+id/actionBarLogo"
+            android:layout_width="60px"
+            android:layout_height="60px"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/actionBarBackButton"
+            android:background="@drawable/action_bar_logo"
+            android:onClick="backActionClicked" />
+
+        <TextView
+            android:id="@+id/actionbartitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/actionBarLogo"
+            android:text=""
+            android:textColor="#666666"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/topactionbarLine"
+        android:layout_width="fill_parent"
+        android:layout_height="4px"
+        android:layout_below="@+id/topactionbarLayout"
+        android:background="#4F000000"
+        android:tag="constantheight" />
+
+	<fragment 
+        android:id="@+id/troublespot_map_fragment"
+        android:name="com.cortxt.app.MMC.Activities.TroubleSpot.TroubleSpotMapFragment"
+        android:layout_below="@id/topactionbarLine"
+		android:layout_width="fill_parent"
+		android:layout_height="500px" >
+    </fragment>
+
+    <ImageView
+
+        android:id="@+id/troublespot_issueicon"
+        android:layout_width="87px"
+        android:layout_height="87px"
+        android:layout_alignTop="@+id/troublespot_map_fragment"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="197px"
+        android:contentDescription="@string/troublespot_crosshairs"
+        android:src="@drawable/troublespot_crosshairs" />
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/troublespot_map_fragment" >
+
+ 	</FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/loggedTroubleEventlayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/troublespot_map_fragment"
+        android:background="#BF000000"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/troubleEvent_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="30px"
+            android:text="@string/troublespot_droppedcall"
+            android:textColor="#FFFFFF"
+            android:textSize="22px" />
+
+        <TextView
+            android:id="@+id/troubleEvent_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/troubleEvent_name"
+            android:layout_below="@+id/troubleEvent_name"
+            android:layout_marginTop="10px"
+            android:text="4:05 PM"
+            android:textColor="#FFFFFF"
+            android:textSize="18px" />
+
+        <TextView
+            android:id="@+id/troubleEvent_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/troubleEvent_time"
+            android:layout_toRightOf="@+id/troubleEvent_time"
+            android:text=" / Oct 3,2012"
+            android:textColor="#FFFFFF"
+            android:textSize="18px" />
+
+        <ImageView
+            android:id="@+id/troubleEvent_icon"
+            android:layout_width="64px"
+            android:layout_height="64px"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="16px"
+            android:background="@drawable/problem_1_icon_light"
+            android:contentDescription="@string/eventhistory_eventicon" />
+
+        <View
+            android:id="@+id/horizontalSeparator"
+            android:layout_width="1px"
+            android:layout_height="50px"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/troubleEvent_icon"
+            android:background="#FFFFFF"
+            android:tag="constantwidth" />
+
+        <TextView
+            android:id="@+id/troubleLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/troubleEvent_time"
+            android:layout_below="@+id/troubleEvent_time"
+            android:text=" Calgary,ABT3C0J8, Canada"
+            android:textColor="#FFFFFF"
+            android:textSize="18px" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/shareButton"
+        android:layout_width="480px"
+        android:layout_height="100px"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="950px"
+        android:background="@drawable/start_button_selector"
+        android:onClick="shareClicked"
+        android:text="@string/mycoverage_share"
+        android:textColor="#FFFFFF"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

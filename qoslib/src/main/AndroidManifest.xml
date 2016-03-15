@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cortxt.app.MMC"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:versionCode="0"
+    android:versionName="2.0" >
+
+	<uses-sdk android:minSdkVersion="8" android:targetSdkVersion="17"/>
+
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_PRECISE_PHONE_STATE"/>
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+	<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+	<uses-permission android:name="android.permission.ACCESS_SUPERUSER"/>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+	<uses-permission android:name="android.permission.GET_TASKS"/>
+	<uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="com.cortxt.app.MMC.permission.C2D_MESSAGE" />
+    <!--uses-permission android:name="android.permission.MODIFY_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.CALL_PRIVILEGED" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/ -->
+
+
+	<!-- uses-permission android:name="android.permission.VIBRATE"/-->
+	<uses-permission android:name="android.permission.READ_SMS"/>
+	<uses-permission android:name="android.permission.RECEIVE_SMS"/>
+	<uses-permission android:name="android.permission.SEND_SMS" />
+	<uses-permission android:name="android.permission.RAISED_THREAD_PRIORITY"/>
+
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+	<uses-permission android:name="android.permission.CALL_PHONE"/>
+	<uses-permission android:name="android.permission.RECORD_AUDIO" />
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+
+	<!-- uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION"/-->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_OVERLAY" />
+
+    <meta-data
+        android:name="com.google.android.maps.v2.API_KEY"
+        android:value="@string/google_maps_api_key"/>
+
+    <application>
+        <uses-library android:name="com.google.android.maps" />
+
+        <activity
+            android:name="com.cortxt.app.MMC.Activities.SplashScreen"
+            android:noHistory="true"
+            android:screenOrientation="user" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:path="mmc://" />
+            </intent-filter>
+        </activity>
+        <receiver
+            android:name="com.cortxt.app.MMC.GcmBroadcastReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="com.cortxt.app.MMC" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.cortxt.app.MMC.Activities.GetStarted1"
+            android:noHistory="true"
+            android:screenOrientation="user" />
+        <activity
+            android:name="com.cortxt.app.MMC.Activities.EngineeringModSettings"
+            android:noHistory="true"
+            android:screenOrientation="user" />
+        <activity
+            android:name="com.cortxt.app.MMC.Activities.GetStarted2"
+            android:noHistory="true"
+            android:screenOrientation="user" />
+        <activity
+            android:name="com.cortxt.app.MMC.Activities.GetStarted3"
+            android:noHistory="true"
+            android:screenOrientation="user" />
+        <activity
+            android:name="com.cortxt.app.MMC.Activities.Dashboard"
+            android:exported="true"
+            android:screenOrientation="user" />
+        <activity
+            android:name="com.cortxt.app.MMC.Activities.MyCoverage.MyCoverageActivityGroup"
+            android:screenOrientation="user" />
+        <activity
+            android:name="com.cortxt.app.MMC.Activities.MyCoverage.MyCoverage"
+            android:screenOrientation="user" />
+        <activity
+            android:name="com.cortxt.app.MMC.Activities.MyCoverage.MyCoverageMapActivity"
+            android:screenOrientation="user" />
+        <activity
+            android:name="com.cortxt.app.MMC.ActivitiesOld.WebsiteLink"
+            android:noHistory="true"
+            android:screenOrientation="user" />
+        <activity
+            android:name="com.cortxt.app.MMC.Activities.CompareNew"
+            android:screenOrientation="user" />
+        <activity
+            android:name="com.cortxt.app.MMC.Activities.Compare"
+            android:screenOrientation="user" />
+        <activity
+            android:name="com.cortxt.app.MMC.Activities.TroubleSpot.TroubleSpot"
+            android:screenOrientation="user" />
+        <activity
+            android:name="com.cortxt.app.MMC.Activities.TroubleSpot.TroubleSpotOSM"
+            android:screenOrientation="user" />
+        <activity
+            android:name="com.cortxt.app.MMC.Activities.TroubleSpot.TroubleSpotMapActivity"
+            android:screenOrientation="user" />
+        <activity
+            android:name="com.cortxt.app.MMC.Activities.SpeedTest"
+            android:screenOrientation="user" />
+        <activity
+            android:name="com.cortxt.app.MMC.Activities.SpeedTestHistory"
+            android:screenOrientation="user" />
+        <activity
+            android:name="com.cortxt.app.MMC.Activities.EventHistory"
+            android:screenOrientation="user" />
+        <activity
+            android:name="com.cortxt.app.MMC.Activities.EventDetail"
+            android:screenOrientation="user" />
+        <activity
+            android:name="com.cortxt.app.MMC.Activities.Settings"
+            android:screenOrientation="user" />
+        <activity
+            android:name="com.cortxt.app.MMC.Activities.VQSettings"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.cortxt.app.MMC.ActivitiesOld.NerdScreen"
+            android:screenOrientation="user" />
+        <activity
+            android:name="com.cortxt.app.MMC.Activities.VoiceQTest"
+            android:screenOrientation="user" >
+            <intent-filter>
+                <action android:name="android.intent.action.RUN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.cortxt.app.MMC.Activities.VideoTest"
+            android:screenOrientation="user" />
+        <activity
+            android:name="com.cortxt.app.MMC.Activities.RawTest"
+            android:screenOrientation="user" />
+        <activity
+            android:name="com.cortxt.app.MMC.Activities.AudioTest"
+            android:screenOrientation="user" />
+        <activity
+            android:name="com.cortxt.app.MMC.Activities.WebPageTest"
+            android:screenOrientation="user" />
+        <activity
+            android:name="com.cortxt.app.MMC.Activities.YouTubeTest"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="user" />
+        <activity
+            android:name="com.cortxt.app.MMC.ActivitiesOld.AppUsageStats"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.cortxt.app.MMC.ActivitiesOld.DeveloperScreenOld"
+            android:screenOrientation="user" />
+        <activity
+            android:name="com.cortxt.app.MMC.Sampling.Building.ManualMapping"
+            android:screenOrientation="user" >
+        </activity>
+        <activity
+            android:name="com.cortxt.app.MMC.Sampling.Transit.TransitSampling"
+            android:screenOrientation="user" >
+        </activity>
+        <activity
+            android:name="com.cortxt.app.MMC.Activities.SatisfactionSurvey"
+            android:screenOrientation="user" />
+        <activity
+            android:name="com.cortxt.app.MMC.Activities.BlackScreen"
+            android:screenOrientation="user" >
+            <intent-filter>
+                <action android:name="android.intent.action.RUN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.cortxt.app.MMC.Sampling.Transit.TransitSamplingMap"
+            android:screenOrientation="user" >
+        </activity>
+        <activity
+            android:name="com.cortxt.app.MMC.Sampling.Transit.TransitSamplingListView"
+            android:screenOrientation="user" >
+        </activity>
+
+        <!-- activity android:label="@string/testing_RIL_OEMHook" android:name=".Activities.RilOemHookTest" android:process="com.android.phone" android:screenOrientation="user"/ -->
+        <!--activity
+            android:name="org.acra.CrashReportDialog"
+            android:excludeFromRecents="true"
+            android:finishOnTaskLaunch="true"
+            android:launchMode="singleInstance"
+            android:screenOrientation="user"
+            android:theme="@android:style/Theme.Dialog" /-->
+
+        <service
+            android:name="com.cortxt.app.MMC.MMCService"
+            android:enabled="true"
+            android:label="MMC Service"
+            android:screenOrientation="user" />
+        <!--service
+            android:name="com.cortxt.app.MMC.sms.SMSService"
+            android:enabled="true"
+            android:label="DM SMS Service"
+            android:screenOrientation="user" /-->
+
+        <!--  service android:enabled="true"
+            android:name="com.cortxt.app.MMC.Sampling.ActivityRecognitionService"
+            android:label="Movement Service" /-->
+
+        <!-- provider android:authorities="com.cortxt.app.MMC.ContentProviderOld.TablesOld" android:name=".ContentProviderOld.ProviderOld" android:screenOrientation="user"/ -->
+
+        <receiver android:name="com.cortxt.app.MMC.BootListener" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.cortxt.com.mmcextension.rilreader.RadioLog.RadioLogService"
+            android:enabled="true"
+            android:exported="true"
+            android:label="RadioLog Service" />
+
+        <activity
+            android:name="com.cortxt.app.MMC.Sampling.Transit.TransitSamplingSettings"
+            android:screenOrientation="user" >
+        </activity>
+        <activity
+            android:name="com.cortxt.app.MMC.Sampling.Transit.TransitSamplingMain"
+            android:screenOrientation="user" >
+        </activity>
+        <activity
+            android:name="com.cortxt.app.MMC.Sampling.Transit.TransitSamplingOverview"
+            android:screenOrientation="user" >
+        </activity>
+        <activity
+            android:name="com.cortxt.app.MMC.Sampling.Transit.TransitSamplingLibrary"
+            android:screenOrientation="user" >
+        </activity>
+        <receiver android:name="com.cortxt.app.MMC.ServicesOld.Intents.MMCIntentHandlerOld" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

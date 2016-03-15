@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/troublespot_container"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="4" >
+
+        <com.google.android.maps.MapView
+            android:id="@+id/troublespot_mapview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:apiKey="@string/google_maps_api_key"
+            android:clickable="true"
+            android:enabled="true" />
+
+        <ImageView
+            android:id="@+id/troublespot_issueicon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/troublespot_crosshairs"
+            android:src="@drawable/troublespot_crosshairs" />
+
+        <ImageButton
+            android:id="@+id/troublespot_centerbutton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="6dp"
+            android:layout_marginTop="6dp"
+            android:background="#88FFFFFF"
+            android:contentDescription="@string/mycoverage_center"
+            android:onClick="centerOnCurrentLocationClicked"
+            android:src="@android:drawable/ic_menu_mylocation" />
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:contentDescription="@string/troublespot_mapshadow"
+            android:scaleType="fitXY"
+            android:src="@drawable/troublespot_mapshadow" />
+
+        <LinearLayout
+            android:id="@+id/troublespot_infobubble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/eventdetail_bubble"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/troublespot_bubble_name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="3dp"
+                android:gravity="center_vertical"
+                android:paddingBottom="3dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="3dp"
+                android:paddingLeft="13dp" >
+
+                <ImageView
+                    android:id="@+id/troublespot_bubble_impacticon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/troublespot_impacticon" />
+
+                <TextView
+                    android:id="@+id/troublespot_bubble_comment"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="13dp"
+                    android:background="@drawable/troublespot_commentballoon"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal" >
+
+                <ImageView
+                    android:id="@+id/troublespot_bubble_carrierlogobg"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="@string/eventdetail_carrierlogo"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/eventdetail_carrierlogo_blank"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/troublespot_bubble_carrierlogo"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="@string/eventdetail_carrierlogo"
+                    android:padding="2dp"
+                    android:scaleType="centerInside"
+                    android:visibility="gone" />
+
+                <ImageButton
+                    android:id="@+id/troublespot_bubble_sharebuttonimg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/eventdetail_sharebutton"
+                    android:contentDescription="@string/eventdetail_share"
+                    android:onClick="shareClicked" />
+
+                <TextView
+                    android:id="@+id/troublespot_bubble_sharebuttontext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:paddingLeft="8dp"
+                    android:text="@string/eventdetail_share"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+"
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ViewFlipper
+        android:id="@+id/troublespot_viewflipper"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="6"
+        android:autoStart="false"
+        android:background="@drawable/troublespot_background" >
+
+        <!-- Step 1 view -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/progress_step1of3"
+                android:paddingTop="13dp"
+                android:src="@drawable/progress_1_2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/troublespot_step1_message"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="90dp"
+                android:layout_weight="1"
+                android:baselineAligned="false"
+                android:orientation="horizontal" >
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:padding="1dp" >
+
+                    <ImageButton
+                        android:id="@+id/troublespot_button_droppedcall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/troublespot_droppedcall"
+                        android:contentDescription="@string/troublespot_droppedcall"
+                        android:onClick="issueButtonClicked"
+                        android:tag="@string/troublespot_droppedcall" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:gravity="center"
+                        android:paddingBottom="15dp"
+                        android:text="@string/troublespot_droppedcall"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:padding="1dp" >
+
+                    <ImageButton
+                        android:id="@+id/troublespot_button_failedcall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/troublespot_failedcall"
+                        android:contentDescription="@string/troublespot_failedcall"
+                        android:onClick="issueButtonClicked"
+                        android:tag="@string/troublespot_failedcall" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:gravity="center"
+                        android:paddingBottom="15dp"
+                        android:text="@string/troublespot_failedcall"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:padding="1dp" >
+
+                    <ImageButton
+                        android:id="@+id/troublespot_button_datasession"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/troublespot_datasession"
+                        android:contentDescription="@string/troublespot_datasesion"
+                        android:onClick="issueButtonClicked"
+                        android:tag="@string/troublespot_datasesion" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:gravity="center"
+                        android:paddingBottom="15dp"
+                        android:text="@string/troublespot_datasesion"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:padding="1dp" >
+
+                    <ImageButton
+                        android:id="@+id/troublespot_button_coverage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/troublespot_coverage"
+                        android:contentDescription="@string/troublespot_coverage"
+                        android:onClick="issueButtonClicked"
+                        android:tag="@string/troublespot_coverage" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:gravity="center"
+                        android:paddingBottom="15dp"
+                        android:text="@string/troublespot_coverage"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Step 2 View -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/progress_step2of3"
+                android:paddingTop="13dp"
+                android:src="@drawable/progress_2_2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/troublespot_step2_message"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="90dp"
+                android:layout_weight="1"
+                android:baselineAligned="false"
+                android:orientation="horizontal" >
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:padding="1dp" >
+
+                    <ImageButton
+                        android:id="@+id/troublespot_button_impactlow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/troublespot_impactlow"
+                        android:contentDescription="@string/troublespot_impactlow"
+                        android:onClick="impactButtonClicked"
+                        android:tag="@string/troublespot_impactlow" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+                        android:paddingBottom="18dp"
+                        android:text="@string/troublespot_impactlow"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:padding="1dp" >
+
+                    <ImageButton
+                        android:id="@+id/troublespot_button_impactmedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/troublespot_impactmedium"
+                        android:contentDescription="@string/troublespot_impactmedium"
+                        android:onClick="impactButtonClicked"
+                        android:tag="@string/troublespot_impactmedium" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+                        android:paddingBottom="18dp"
+                        android:text="@string/troublespot_impactmedium"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:padding="1dp" >
+
+                    <ImageButton
+                        android:id="@+id/troublespot_button_impacthigh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/troublespot_impacthigh"
+                        android:contentDescription="@string/troublespot_impacthigh"
+                        android:onClick="impactButtonClicked"
+                        android:tag="@string/troublespot_impacthigh" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+                        android:paddingBottom="18dp"
+                        android:text="@string/troublespot_impacthigh"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Step 3 view -->
+        <!--
+		<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:orientation="vertical"
+	    android:gravity="center">
+	    	<ImageView
+	    	android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:paddingTop="13dp"
+	    	android:src="@drawable/progress_2"
+	    	android:contentDescription="@string/progress_step3of3"/>
+	    	
+	    	<TextView
+	    	android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:layout_weight="1"
+	    	android:text="@string/troublespot_step3_message"
+	    	android:gravity="center"
+	    	android:textColor="@color/white"
+	    	android:textStyle="bold"
+	    	android:textSize="15sp"/>
+	    	
+	    	<EditText
+	    	android:id="@+id/troublespot_comment"
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:layout_weight="1"
+	    	android:inputType="textShortMessage"
+	    	android:imeOptions="actionDone"
+	    	android:layout_marginLeft="5dp"
+	    	android:layout_marginRight="5dp"/>
+	    	
+	    	<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:gravity="center"
+			android:layout_weight="1">
+		    	<Button
+		    	android:layout_width="130dp"
+		    	android:layout_height="wrap_content"
+		    	android:text="@string/troublespot_submit"
+		    	android:onClick="submitClicked"/>
+			</LinearLayout>
+        </LinearLayout>
+        -->
+        <!-- Step 4 view -->
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <TextView
+                android:id="@+id/troublespot_timeandlocation"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp" />
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/eventdetail_socialmediabanner"
+                android:scaleType="fitXY"
+                android:src="@drawable/socialmediabanner" />
+        </RelativeLayout>
+    </ViewFlipper>
+
+</LinearLayout>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/survey_container"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#eaeaea"
+    android:gravity="center" >
+
+    <View
+        android:id="@+id/centralBackground"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/background" />
+
+    <RelativeLayout
+        android:id="@+id/topactionbarLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="96px"
+        android:background="@color/title_background" >
+
+        <ImageButton
+            android:id="@+id/actionBarBackButton"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:padding="10px"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:onClick="surveyBackActionClicked"
+            android:src="@drawable/ic_action_back_icon" />
+
+        <ImageView
+            android:id="@+id/actionBarLogo"
+            android:layout_width="60px"
+            android:layout_height="60px"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/actionBarBackButton"
+            android:background="@drawable/action_bar_logo"
+            android:onClick="surveyBackActionClicked" />
+
+        <TextView
+            android:id="@+id/actionbartitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/actionBarLogo"
+            android:text="@string/survey_title"
+            android:textColor="#666666"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/topactionbarLine"
+
+        android:layout_width="fill_parent"
+        android:layout_height="4px"
+        android:layout_below="@+id/topactionbarLayout"
+        android:background="#3399cc" />
+
+    <TextView
+        android:id="@+id/surveyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topactionbarLine"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20px"
+        android:gravity="center"
+        android:paddingLeft="20px"
+        android:paddingRight="20px"
+        android:text="@string/survey_question_title"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+
+    <SeekBar
+        android:id="@+id/surveySeekBar"
+        android:layout_width="240px"
+        android:layout_height="10px"
+        android:layout_below="@id/surveyTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10px"
+        android:paddingEnd="20px"
+        android:paddingStart="20px"
+        android:progress="0"
+        android:progressDrawable="@drawable/seekbar_progress"
+        android:secondaryProgress="0"
+        android:thumb="@drawable/seek_thumb_normal" />
+
+    <TextView
+        android:id="@+id/surveyQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/surveySeekBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10px"
+        android:gravity="center"
+        android:hint="@string/survey_question_title"
+        android:padding="10px"
+        android:paddingBottom="20px"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:id="@+id/questionsLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/surveyQuestion"
+        android:layout_marginLeft="40px"
+        android:layout_marginRight="40px"
+        android:layout_marginTop="20px"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:weightSum="7" >
+
+            <com.cortxt.app.MMC.ActivitiesOld.CustomViews.SurveyButton
+                android:id="@+id/answerOne"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#e5e5e5"
+                android:button="@null"
+                android:hint="@string/survey_answer_hint"
+                android:padding="30px"
+                android:tag="0"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2px"
+                android:background="#cccccc" />
+
+            <com.cortxt.app.MMC.ActivitiesOld.CustomViews.SurveyButton
+                android:id="@+id/answerTwo"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#e5e5e5"
+                android:button="@null"
+                android:hint="@string/survey_answer_hint"
+                android:padding="30px"
+                android:tag="1"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2px"
+                android:background="#cccccc" />
+
+            <com.cortxt.app.MMC.ActivitiesOld.CustomViews.SurveyButton
+                android:id="@+id/answerThree"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#e5e5e5"
+                android:button="@null"
+                android:hint="@string/survey_answer_hint"
+                android:padding="30px"
+                android:tag="2"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2px"
+                android:background="#cccccc" />
+
+            <com.cortxt.app.MMC.ActivitiesOld.CustomViews.SurveyButton
+                android:id="@+id/answerFour"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#e5e5e5"
+                android:button="@null"
+                android:hint="@string/survey_answer_hint"
+                android:padding="30px"
+                android:tag="3"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2px"
+                android:background="#cccccc" />
+
+            <com.cortxt.app.MMC.ActivitiesOld.CustomViews.SurveyButton
+                android:id="@+id/answerFive"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#e5e5e5"
+                android:button="@null"
+                android:hint="@string/survey_answer_hint"
+                android:padding="30px"
+                android:tag="4"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2px"
+                android:background="#cccccc" />
+        </RadioGroup>
+    </LinearLayout>
+
+</RelativeLayout>

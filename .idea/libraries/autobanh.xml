@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="autobanh">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../restcommsdk/restcomm-android-sdk/restcomm.android.client.sdk/libs/autobanh.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

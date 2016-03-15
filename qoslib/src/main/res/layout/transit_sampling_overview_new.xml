@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/compare_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <View
+        android:id="@+id/centralBackground"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/background" />
+
+    <RelativeLayout
+        android:id="@+id/scallingWrapperLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+          <!-- Action bar -->
+
+    <RelativeLayout
+        android:id="@+id/topactionbarLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="96px"
+        android:background="@color/title_background" >
+
+        <ImageButton
+            android:id="@+id/actionBarBackButton"
+            android:layout_width="64px"
+            android:layout_height="96px"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:onClick="onExitClicked"
+            android:src="@drawable/ic_action_back_icon" />
+
+        <ImageView
+            android:id="@+id/actionBarLogo"
+            android:layout_width="60px"
+            android:layout_height="60px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8px"
+            android:layout_toRightOf="@+id/actionBarBackButton"
+            android:background="@drawable/action_bar_logo"
+            android:onClick="onExitClicked" />
+
+        <TextView
+            android:id="@+id/actionbartitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="6px"
+            android:layout_toRightOf="@+id/actionBarLogo"
+            android:onClick="onMappingOptions"
+            android:text="@string/transitsampling_overview_title"
+            android:textColor="#666666"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/topactionbarLine"
+        android:layout_width="fill_parent"
+        android:layout_height="4px"
+        android:layout_below="@+id/topactionbarLayout"
+        android:background="#3399cc" />
+
+        <RelativeLayout
+            android:id="@+id/topactionbarLine"
+            android:layout_width="fill_parent"
+            android:layout_height="4px"
+            android:layout_below="@+id/topactionbarLayout"
+            android:background="#3399cc" />
+
+        <View
+            android:id="@+id/actionSeparator"
+            android:layout_width="fill_parent"
+            android:layout_height="0px"
+            android:layout_below="@id/topactionbarLine"
+            android:background="#5F000000" />
+
+        <LinearLayout
+            android:id="@+id/compare_tabs"
+            android:layout_width="fill_parent"
+            android:layout_height="80px"
+            android:layout_below="@+id/actionSeparator"
+            android:background="@color/new_compare_tabs_bg"
+            android:gravity="center_horizontal"
+            android:weightSum="1.0" >
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.5"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/statIndicatorMap"
+                    android:layout_width="fill_parent"
+                    android:layout_height="15px"
+                    android:layout_alignParentBottom="true"
+                    android:background="#FF0099CC"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/statText0"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center"
+                    android:text="@string/transitsampling_map_overview"
+                    android:textColor="#5D5D5D"
+                    android:textSize="@dimen/compare_tab_text_size" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/Separator0"
+                android:layout_width="2px"
+                android:layout_height="40px"
+                android:layout_gravity="center_vertical"
+                android:background="#5F000000" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.5"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/statText1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/transitsampling_sample_overview"
+                    android:textColor="#5D5D5D"
+                    android:textSize="@dimen/compare_tab_text_size" />
+
+                <ImageView
+                    android:id="@+id/statIndicatorOverview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="15px"
+                    android:layout_alignParentBottom="true"
+                    android:background="#FF0099CC" />
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/Separator1"
+                android:layout_width="2px"
+                android:layout_height="40px"
+                android:layout_gravity="center_vertical"
+                android:background="#5F000000" />
+
+            </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/arrowslayout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/compare_tabs" >
+
+            <ImageButton
+                android:id="@+id/mystats_leftArrow"
+                android:layout_width="49dip"
+                android:layout_height="48dip"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10px"
+                android:background="@drawable/mystats_arrowleft"
+                android:onClick="leftClicked" />
+
+            <ImageButton
+                android:id="@+id/mystats_rightArrow"
+                android:layout_width="49dip"
+                android:layout_height="48dip"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10px"
+                android:background="@drawable/mystats_arrowright"
+                android:onClick="rightClicked" />
+        </RelativeLayout>
+        
+        <ViewFlipper
+            android:id="@+id/flipper"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/transitoverview_button"
+            android:layout_below="@+id/compare_tabs" >
+
+            <LinearLayout
+			    android:id="@+id/containerLinearLayout"
+			    android:layout_width="fill_parent"
+			    android:layout_height="fill_parent"
+			    android:layout_alignParentLeft="true"
+			    android:orientation="horizontal" 
+			    android:gravity="center_vertical"
+			    android:layout_marginTop="40px">
+   
+			    <!-- Label Container -->
+			    
+			    <LinearLayout
+			        android:id="@+id/labelsLinearLayout"
+			        android:layout_width="0px"
+			        android:layout_height="fill_parent"
+			        android:layout_weight="0.6"
+			        android:layout_alignParentBottom="true"
+			        android:layout_alignParentLeft="true"
+			        android:layout_below="@+id/topactionbarLine"
+			        android:orientation="vertical"
+			        android:gravity="right" >
+			        
+			        <TextView
+			            android:id="@+id/stationsLabelTexView"
+			        	android:layout_width="wrap_content"
+			       		android:layout_height="wrap_content"
+			            android:text="@string/transitsampling_stations" 
+			            android:textStyle="bold"
+			            android:textSize="16sp"
+			            android:layout_marginRight="10px" />
+			        
+			        <TextView
+			            android:id="@+id/timeLabelTextView"
+			        	android:layout_width="wrap_content"
+			       		android:layout_height="wrap_content"
+			       		android:layout_marginTop="15px"
+			       		android:textStyle="bold"
+			       		android:textSize="16sp"
+			            android:text="@string/transitsampling_sampling_time" 
+			            android:layout_marginRight="10px" />
+			        
+			        <TextView
+			            android:id="@+id/distanceLabelTextView"
+			        	android:layout_width="wrap_content"
+			       		android:layout_height="wrap_content"
+			       		android:layout_marginTop="15px"
+			       		android:textStyle="bold"
+			       		android:textSize="16sp"
+			            android:text="@string/transitsampling_sampling_distance" 
+			            android:layout_marginRight="10px" />
+			        
+			        <TextView
+			            android:id="@+id/collectedLabelTextView"
+			        	android:layout_width="wrap_content"
+			       		android:layout_height="wrap_content"
+			       		android:layout_marginTop="15px"
+			       		android:textStyle="bold"
+			       		android:textSize="16sp"
+			            android:text="@string/transitsampling_samples_collected" 
+			            android:layout_marginRight="10px" />
+			        
+			        <TextView
+			            android:id="@+id/speedtestsLabelTextView"
+			        	android:layout_width="wrap_content"
+			       		android:layout_height="wrap_content"
+			       		android:layout_marginTop="15px"
+			       		android:textStyle="bold"
+			       		android:textSize="16sp"
+			            android:text="@string/transitsampling_speedtests" 
+			            android:layout_marginRight="10px" />
+			        
+			         <TextView
+			            android:id="@+id/downloadLabelTextView"
+			        	android:layout_width="wrap_content"
+			       		android:layout_height="wrap_content"
+			       		android:layout_marginTop="15px"
+			       		android:textStyle="bold"
+			       		android:textSize="16sp"
+			            android:text="@string/transitsampling_top_dl_speed" 
+			            android:layout_marginRight="10px" />
+			         
+			         <TextView
+			            android:id="@+id/uploadLabelTextView"
+			        	android:layout_width="wrap_content"
+			       		android:layout_height="wrap_content"
+			       		android:layout_marginTop="15px"
+			       		android:textStyle="bold"
+			       		android:textSize="16sp"
+			            android:text="@string/transitsampling_top_ul_speed" 
+			            android:layout_marginRight="10px" />
+			         
+			         <TextView
+			            android:id="@+id/issuesLabelTextView"
+			        	android:layout_width="wrap_content"
+			       		android:layout_height="wrap_content"
+			       		android:layout_marginTop="15px"
+			       		android:textStyle="bold"
+			       		android:textSize="16sp"
+			            android:text="@string/transitsampling_route_issues" 
+			            android:layout_marginRight="10px" />
+			         
+			         <TextView
+			            android:id="@+id/usageLabelTextView"
+			        	android:layout_width="wrap_content"
+			       		android:layout_height="wrap_content"
+			       		android:layout_marginTop="15px"
+			       		android:textStyle="bold"
+			       		android:textSize="16sp"
+			            android:text="@string/transitsampling_itinerary_usage" 
+			            android:layout_marginRight="10px" />
+			        
+			    </LinearLayout>
+	
+			    <!-- Info Container -->
+			    
+			    <LinearLayout
+			        android:id="@+id/infoLinearLayout"
+			        android:layout_width="0px"
+			        android:layout_height="fill_parent"
+			        android:layout_weight="0.4"
+			        android:layout_alignParentBottom="true"
+			        android:layout_alignParentRight="true"
+			        android:layout_alignTop="@+id/labelsLinearLayout"
+			        android:orientation="vertical"
+			        android:gravity="left" >
+			         
+			        <TextView
+			            android:id="@+id/stationsTextView"
+			        	android:layout_width="wrap_content"
+			       		android:layout_height="wrap_content"
+			            android:text="0" 
+			            android:textSize="16sp"
+			            android:layout_marginRight="10px" />
+			        
+			        <TextView
+			            android:id="@+id/timeTextView"
+			        	android:layout_width="wrap_content"
+			       		android:layout_height="wrap_content"
+			       		android:layout_marginTop="15px"
+			            android:text="0 min" 
+			            android:textSize="16sp"
+			            android:layout_marginRight="10px" />
+			        
+			        <TextView
+			            android:id="@+id/distanceTextView"
+			        	android:layout_width="wrap_content"
+			       		android:layout_height="wrap_content"
+			       		android:layout_marginTop="15px"
+			            android:text="0 Km" 
+			            android:textSize="16sp"
+			            android:layout_marginRight="10px" />
+			        
+			        <TextView
+			            android:id="@+id/collectedTextView"
+			        	android:layout_width="wrap_content"
+			       		android:layout_height="wrap_content"
+			       		android:layout_marginTop="15px"
+			            android:text="0" 
+			            android:textSize="16sp"
+			            android:layout_marginRight="10px" />
+			        
+			        <TextView
+			            android:id="@+id/speedtestsTextView"
+			        	android:layout_width="wrap_content"
+			       		android:layout_height="wrap_content"
+			       		android:layout_marginTop="15px"
+			            android:text="0" 
+			            android:textSize="16sp"
+			            android:layout_marginRight="10px" />
+			        
+			         <TextView
+			            android:id="@+id/downloadTextView"
+			        	android:layout_width="wrap_content"
+			       		android:layout_height="wrap_content"
+			       		android:layout_marginTop="15px"
+			            android:text="0Mb/s" 
+			            android:textSize="16sp"
+			            android:layout_marginRight="10px" />
+			         
+			         <TextView
+			            android:id="@+id/uploadTextView"
+			        	android:layout_width="wrap_content"
+			       		android:layout_height="wrap_content"
+			       		android:layout_marginTop="15px"
+			            android:text="0Mb/s" 
+			            android:textSize="16sp"
+			            android:layout_marginRight="10px" />
+			         
+			         <TextView
+			            android:id="@+id/issuesTextView"
+			        	android:layout_width="wrap_content"
+			       		android:layout_height="wrap_content"
+			       		android:layout_marginTop="15px"
+			            android:text="0" 
+			            android:textSize="16sp"
+			            android:layout_marginRight="10px" />
+			         
+			         <TextView
+			            android:id="@+id/usageTextView"
+			        	android:layout_width="wrap_content"
+			       		android:layout_height="wrap_content"
+			       		android:layout_marginTop="15px"
+			            android:text="0" 
+			            android:textSize="16sp"
+			            android:layout_marginRight="10px" />
+			      </LinearLayout>
+		     </LinearLayout>
+
+			 <com.cortxt.app.MMC.Activities.MyCoverage.MMCMapView
+				android:id="@+id/transitoverview_mapview"
+	            android:layout_width="fill_parent"
+	            android:layout_height="fill_parent"
+	            android:apiKey="@string/google_maps_api_key"
+	            android:clickable="false"
+	            android:enabled="true" />
+            
+        </ViewFlipper>
+
+        <Button
+            android:id="@+id/transitoverview_button"
+            android:layout_width="fill_parent"
+            android:layout_height="80px"
+            android:layout_alignParentBottom="true"
+            android:textSize="16sp"
+            android:text="@string/transitsampling_start_another_itinerary" 
+            android:onClick="newItinerary"/>
+        
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/troublespot_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/scallingWrapper"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <RelativeLayout
+            android:id="@+id/topactionbarLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="96px"
+            android:background="@drawable/action_bar_bg" >
+
+            <ImageButton
+                android:id="@+id/actionBarBackButton"
+                android:layout_width="64px"
+                android:layout_height="96px"
+                android:layout_centerVertical="true"
+                android:background="@drawable/action_bar_bg"
+                android:onClick="backActionClicked" />
+
+            <ImageView
+                android:id="@+id/actionBarLogo"
+                android:layout_width="60px"
+                android:layout_height="60px"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8px"
+                android:layout_toRightOf="@+id/actionBarBackButton"
+                android:background="@drawable/action_bar_logo"
+                android:onClick="backActionClicked"
+                 />
+
+            <TextView
+                android:id="@+id/actionbartitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5px"
+                android:layout_toRightOf="@+id/actionBarLogo"
+                android:text=""
+                android:textColor="#666666"
+                android:textSize="18dp" />
+        </RelativeLayout>
+
+ 	 	<RelativeLayout
+     	   	android:id="@+id/topactionbarLine"
+        	android:layout_width="fill_parent"
+        	android:layout_height="4px"
+        	android:layout_below="@+id/topactionbarLayout"
+        	android:background="#3399cc" />
+
+        <com.google.android.maps.MapView
+            android:id="@+id/troublespot_mapview"
+            android:layout_width="fill_parent"
+            android:layout_height="500px"
+            android:layout_alignTop="@+id/topactionbarLine"
+            android:layout_marginTop="2px"
+            android:apiKey="@string/google_maps_api_key"
+            android:clickable="true"
+            android:enabled="true" />
+
+        <ImageView
+            android:id="@+id/troublespot_issueicon"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignTop="@+id/troublespot_mapview"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="197px"
+            android:contentDescription="@string/troublespot_crosshairs"
+            android:src="@drawable/troublespot_crosshairs" />
+
+        <TextView
+            android:id="@+id/issueText"
+            android:layout_width="wrap_content"
+            android:layout_height="60px"
+            android:layout_below="@+id/troublespot_mapview"
+            android:layout_marginLeft="50px"
+            android:layout_marginTop="10px"
+            android:text="@string/troublespot_step1_message"
+            android:textColor="#999999"
+            android:textSize="18dp" />
+
+        <View
+            android:id="@+id/secondSeparator"
+            android:layout_width="660px"
+            android:layout_height="2px"
+            android:layout_below="@+id/issueText"
+            android:layout_centerHorizontal="true"
+            android:background="#000000"
+            android:tag="constantheight" />
+
+        <RelativeLayout
+            android:id="@+id/TroubleTypeLayout"
+            android:layout_width="660px"
+            android:layout_height="400px"
+            android:layout_below="@+id/secondSeparator"
+            android:layout_centerHorizontal="true"
+            android:visibility="visible" >
+
+            <RelativeLayout
+                android:id="@+id/droppedCallTrouble"
+                android:layout_width="660px"
+                android:layout_height="100px"
+                android:onClick="issueButtonClicked"
+                android:tag="@string/troublespot_droppedcall" >
+
+                <TextView
+                    android:id="@+id/droppedTroubleName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10px"
+                    android:text="@string/troublespot_droppedcall"
+                    android:textColor="#222222"
+                    android:textSize="22dp" />
+
+                <View
+                    android:id="@+id/horizontalSeparator"
+                    android:layout_width="2px"
+                    android:layout_height="70px"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="30px"
+                    android:layout_toLeftOf="@+id/troubleIcon"
+                    android:background="#4F000000"
+                    android:tag="constantwidth" />
+
+                <ImageView
+                    android:id="@+id/troubleIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/broken_phone_icon" />
+
+                <View
+                    android:id="@+id/verticalSeparator"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2px"
+                    android:layout_alignParentBottom="true"
+                    android:background="#4F000000"
+                    android:tag="constantheight" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/FailedCallTrouble"
+                android:layout_width="660px"
+                android:layout_height="100px"
+                android:layout_marginTop="100px"
+                android:onClick="issueButtonClicked"
+                android:tag="@string/troublespot_failedcall" >
+
+                <TextView
+                    android:id="@+id/FailedTroubleName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10px"
+                    android:text="@string/troublespot_failedcall"
+                    android:textColor="#222222"
+                    android:textSize="22dp" />
+
+                <View
+                    android:id="@+id/horizontalSeparator"
+                    android:layout_width="2px"
+                    android:layout_height="70px"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="30px"
+                    android:layout_toLeftOf="@+id/troubleIcon"
+                    android:background="#4F000000"
+                    android:tag="constantwidth" />
+
+                <ImageView
+                    android:id="@+id/troubleIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/broken_phone_icon" />
+
+                <View
+                    android:id="@+id/verticalSeparator"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2px"
+                    android:layout_alignParentBottom="true"
+                    android:background="#4F000000"
+                    android:tag="constantheight" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/DataSessionTrouble"
+                android:layout_width="660px"
+                android:layout_height="100px"
+                android:layout_alignTop="@+id/FailedCallTrouble"
+                android:layout_marginTop="100px"
+                android:onClick="issueButtonClicked"
+                android:tag="@string/troublespot_datasesion" >
+
+                <TextView
+                    android:id="@+id/DataTroubleName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10px"
+                    android:text="@string/troublespot_datasesion"
+                    android:textColor="#222222"
+                    android:textSize="22dp" />
+
+                <View
+                    android:id="@+id/horizontalSeparator"
+                    android:layout_width="2px"
+                    android:layout_height="70px"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="30px"
+                    android:layout_toLeftOf="@+id/troubleIcon"
+                    android:background="#4F000000"
+                    android:tag="constantwidth" />
+
+                <ImageView
+                    android:id="@+id/troubleIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/no_service_icon" />
+
+                <View
+                    android:id="@+id/verticalSeparator"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2px"
+                    android:layout_alignParentBottom="true"
+                    android:background="#4F000000"
+                    android:tag="constantheight" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/noCoveragelayout"
+                android:layout_width="660px"
+                android:layout_height="100px"
+                android:layout_alignTop="@+id/DataSessionTrouble"
+                android:layout_marginTop="100px"
+                android:onClick="issueButtonClicked"
+                android:tag="@string/troublespot_coverage" >
+
+                <TextView
+                    android:id="@+id/NoCoverageTroubleName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10px"
+                    android:text="@string/troublespot_coverage"
+                    android:textColor="#222222"
+                    android:textSize="22dp" />
+
+                <View
+                    android:id="@+id/horizontalSeparator"
+                    android:layout_width="2px"
+                    android:layout_height="70px"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="30px"
+                    android:layout_toLeftOf="@+id/troubleIcon"
+                    android:background="#4F000000"
+                    android:tag="constantwidth" />
+
+                <ImageView
+                    android:id="@+id/troubleIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/antenna_icon" />
+
+                <View
+                    android:id="@+id/verticalSeparator"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2px"
+                    android:layout_alignParentBottom="true"
+                    android:background="#4F000000"
+                    android:tag="constantheight" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/TroubleImpactLayout"
+            android:layout_width="660px"
+            android:layout_height="400px"
+            android:layout_below="@+id/secondSeparator"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone" >
+
+            <RelativeLayout
+                android:id="@+id/lowImpactLayout"
+                android:layout_width="660px"
+                android:layout_height="100px"
+                android:onClick="impactButtonClicked"
+                android:tag="@string/troublespot_impactlow" >
+
+                <TextView
+                    android:id="@+id/lowImpactText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10px"
+                    android:text="@string/troublespot_impactlow"
+                    android:textColor="#222222"
+                    android:textSize="22dp" />
+
+                <View
+                    android:id="@+id/horizontalSeparator"
+                    android:layout_width="2px"
+                    android:layout_height="70px"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="30px"
+                    android:layout_toLeftOf="@+id/troubleIcon"
+                    android:background="#4F000000"
+                    android:tag="constantwidth" />
+
+                <ImageView
+                    android:id="@+id/troubleIcon"
+                    android:layout_width="66px"
+                    android:layout_height="66px"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/problem_1_icon" />
+
+                <View
+                    android:id="@+id/verticalSeparator"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2px"
+                    android:layout_alignParentBottom="true"
+                    android:background="#4F000000"
+                    android:tag="constantheight" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/MediumImpactTrouble"
+                android:layout_width="660px"
+                android:layout_height="100px"
+                android:layout_marginTop="100px"
+                android:onClick="impactButtonClicked"
+                android:tag="@string/troublespot_impactmedium" >
+
+                <TextView
+                    android:id="@+id/MediumImpactText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10px"
+                    android:text="@string/troublespot_impactmedium"
+                    android:textColor="#222222"
+                    android:textSize="22dp" />
+
+                <View
+                    android:id="@+id/horizontalSeparator"
+                    android:layout_width="2px"
+                    android:layout_height="70px"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="30px"
+                    android:layout_toLeftOf="@+id/troubleIcon"
+                    android:background="#4F000000"
+                    android:tag="constantwidth" />
+
+                <ImageView
+                    android:id="@+id/troubleIcon"
+                    android:layout_width="66px"
+                    android:layout_height="66px"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/problem_2_icon" />
+
+                <View
+                    android:id="@+id/verticalSeparator"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2px"
+                    android:layout_alignParentBottom="true"
+                    android:background="#4F000000"
+                    android:tag="constantheight" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/HighImpactTroubleLayout"
+                android:layout_width="660px"
+                android:layout_height="100px"
+                android:layout_alignTop="@+id/MediumImpactTrouble"
+                android:layout_marginTop="100px"
+                android:onClick="impactButtonClicked"
+                android:tag="@string/troublespot_impacthigh" >
+
+                <TextView
+                    android:id="@+id/HighImpactTroubleName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10px"
+                    android:text="@string/troublespot_impacthigh"
+                    android:textColor="#222222"
+                    android:textSize="22dp" />
+
+                <View
+                    android:id="@+id/horizontalSeparator"
+                    android:layout_width="2px"
+                    android:layout_height="70px"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="30px"
+                    android:layout_toLeftOf="@+id/troubleIcon"
+                    android:background="#4F000000"
+                    android:tag="constantwidth" />
+
+                <ImageView
+                    android:id="@+id/troubleIcon"
+                    android:layout_width="66px"
+                    android:layout_height="66px"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/problem_3_icon" />
+
+                <View
+                    android:id="@+id/verticalSeparator"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2px"
+                    android:layout_alignParentBottom="true"
+                    android:background="#4F000000"
+                    android:tag="constantheight" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/loggedTroubleEventlayout"
+            android:layout_width="fill_parent"
+            android:layout_height="300px"
+            android:layout_alignTop="@+id/troublespot_mapview"
+            android:background="#BF000000"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/troubleEvent_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20px"
+                android:layout_marginTop="30px"
+                android:text="@string/troublespot_droppedcall"
+                android:textColor="#FFFFFF"
+                android:textSize="22dp" />
+
+            <TextView
+                android:id="@+id/troubleEvent_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/troubleEvent_name"
+                android:layout_below="@+id/troubleEvent_name"
+                android:layout_marginTop="10px"
+                android:text="4:05 PM"
+                android:textColor="#FFFFFF"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/troubleEvent_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/troubleEvent_time"
+                android:layout_toRightOf="@+id/troubleEvent_time"
+                android:text=" / Oct 3,2012"
+                android:textColor="#FFFFFF"
+                android:textSize="18dp" />
+
+            <View
+                android:id="@+id/horizontalSeparator"
+                android:layout_width="2px"
+                android:layout_height="100px"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="30px"
+                android:layout_toLeftOf="@+id/troubleEvent_icon"
+                android:background="#FFFFFF"
+                android:tag="constantwidth" />
+
+            <ImageView
+                android:id="@+id/troubleEvent_icon"
+                android:layout_width="64px"
+                android:layout_height="64px"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/problem_1_icon_light"
+                android:contentDescription="@string/eventhistory_eventicon" />
+
+            <TextView
+                android:id="@+id/troubleLocation"
+                android:layout_width="500px"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/troubleEvent_time"
+                android:layout_below="@+id/troubleEvent_time"
+                android:text=" Calgary,ABT3C0J8, Canada"
+                android:textColor="#FFFFFF"
+                android:textSize="18dp" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/shareButton"
+            android:layout_width="480px"
+            android:layout_height="100px"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="950px"
+            android:background="@drawable/start_button_selector"
+            android:onClick="shareClicked"
+            android:text="@string/mycoverage_share"
+            android:textColor="#FFFFFF"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</RelativeLayout>

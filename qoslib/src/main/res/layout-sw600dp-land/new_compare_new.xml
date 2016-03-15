@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/compare_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <View
+        android:id="@+id/centralBackground"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/background" />
+
+    <RelativeLayout
+        android:id="@+id/scallingWrapperLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:id="@+id/topactionbarLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="96px"
+            android:background="@color/title_background" >
+
+            <ImageButton
+                android:id="@+id/actionBarBackButton"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_centerVertical="true"
+                android:padding="10px"
+                android:background="@null"
+                android:onClick="backActionClicked"
+                android:src="@drawable/ic_action_back_icon" />
+
+            <ImageView
+                android:id="@+id/actionBarLogo"
+                android:layout_width="60px"
+                android:layout_height="60px"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/actionBarBackButton"
+                android:background="@drawable/action_bar_logo"
+                android:onClick="backActionClicked" />
+
+            <TextView
+                android:id="@+id/actionbartitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/actionBarLogo"
+                android:text="Compare"
+                android:textColor="#666666"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/actionbarShareIcon"
+                android:layout_width="64px"
+                android:layout_height="64px"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/ic_action_share_icon"
+                android:onClick="shareClicked" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/topactionbarLine"
+            android:layout_width="fill_parent"
+            android:layout_height="4px"
+            android:layout_below="@+id/topactionbarLayout"
+            android:background="#3399cc" />
+
+        <View
+            android:id="@+id/actionSeparator"
+            android:layout_width="fill_parent"
+            android:layout_height="0px"
+            android:layout_below="@id/topactionbarLine"
+            android:background="#5F000000" />
+
+        <LinearLayout
+            android:id="@+id/compare_tabs"
+            android:layout_width="fill_parent"
+            android:layout_height="80px"
+            android:layout_below="@+id/actionSeparator"
+            android:background="@color/new_compare_tabs_bg"
+            android:gravity="center_horizontal"
+            android:weightSum="2.5" >
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.25"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/statText0"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/mystats_stat0"
+                    android:textColor="#3D3D3D"
+                    android:textSize="@dimen/compare_tab_text_size" />
+
+                <ImageView
+                    android:id="@+id/StatIndicator0"
+                    android:layout_width="fill_parent"
+                    android:layout_height="15px"
+                    android:layout_alignParentBottom="true"
+                    android:background="#FF0099CC"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/Separator0"
+                android:layout_width="2px"
+                android:layout_height="40px"
+                android:layout_gravity="center_vertical"
+                android:background="#5F000000" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.25"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/statText1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/mystats_stat1"
+                    android:textColor="#3D3D3D"
+                    android:textSize="@dimen/compare_tab_text_size" />
+
+                <ImageView
+                    android:id="@+id/StatIndicator1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="15px"
+                    android:layout_alignParentBottom="true"
+                    android:background="#FF0099CC" />
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/Separator1"
+                android:layout_width="2px"
+                android:layout_height="40px"
+                android:layout_gravity="center_vertical"
+                android:background="#5F000000" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.25"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/statText2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/mystats_stat2"
+                    android:textColor="#3D3D3D"
+                    android:textSize="@dimen/compare_tab_text_size" />
+
+                <ImageView
+                    android:id="@+id/StatIndicator2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="15px"
+                    android:layout_alignParentBottom="true"
+                    android:background="#FF0099CC"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/Separator2"
+                android:layout_width="2px"
+                android:layout_height="40px"
+                android:layout_gravity="center_vertical"
+                android:background="#5F000000" >
+            </View>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.25"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/statText3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/mystats_stat3"
+                    android:textColor="#3D3D3D"
+                    android:textSize="@dimen/compare_tab_text_size" />
+
+                <ImageView
+                    android:id="@+id/StatIndicator3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="15px"
+                    android:layout_alignParentBottom="true"
+                    android:background="#FF0099CC"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <ViewFlipper
+            android:id="@+id/flipper"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/compare_tabs"
+            android:layout_above="@id/locationAndTimeLayout"
+            android:layout_marginTop="10dp" >
+
+            <com.cortxt.app.MMC.ActivitiesOld.CustomViews.Atomic.RankingGroupView
+                android:id="@+id/stats_webview0"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical" >
+
+                <include layout="@layout/rankstatchart_new" />
+            </com.cortxt.app.MMC.ActivitiesOld.CustomViews.Atomic.RankingGroupView>
+
+            <com.cortxt.app.MMC.ActivitiesOld.CustomViews.StatChartViewNew
+                android:id="@+id/stats_webview1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <include
+                    android:id="@+id/stats_webview02"
+                    layout="@layout/mystatchart_new" />
+            </com.cortxt.app.MMC.ActivitiesOld.CustomViews.StatChartViewNew>
+
+            <com.cortxt.app.MMC.ActivitiesOld.CustomViews.StatChartViewNew
+                android:id="@+id/stats_webview2"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center" >
+
+                <include
+                    android:id="@+id/stats_webview03"
+                    layout="@layout/callstatchart_new" />
+            </com.cortxt.app.MMC.ActivitiesOld.CustomViews.StatChartViewNew>
+
+            <com.cortxt.app.MMC.ActivitiesOld.CustomViews.Atomic.SpeedStatGroupView
+                android:id="@+id/stats_webview3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center" >
+
+                <include layout="@layout/speedstatchart_new" />
+			</com.cortxt.app.MMC.ActivitiesOld.CustomViews.Atomic.SpeedStatGroupView>
+        </ViewFlipper>
+
+        <RelativeLayout
+            android:id="@+id/arrowslayout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/compare_tabs" >
+
+            <ImageButton
+                android:id="@+id/mystats_leftArrow"
+                android:layout_width="49dip"
+                android:layout_height="48dip"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10px"
+                android:background="@drawable/mystats_arrowleft"
+                android:contentDescription="@string/mystats_arrowleft"
+                android:onClick="leftClicked" />
+
+            <ImageButton
+                android:id="@+id/mystats_rightArrow"
+                android:layout_width="49dip"
+                android:layout_height="48dip"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10px"
+                android:background="@drawable/mystats_arrowright"
+                android:contentDescription="@string/mystats_arrowright"
+                android:onClick="rightClicked" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/locationAndTimeLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_alignParentBottom="true" >
+
+            <TextView
+                android:id="@+id/radiusText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="#666666"
+                android:textSize="14px" />
+
+            <TextView
+                android:id="@+id/locationText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/radiusText"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="#666666"
+                android:textSize="14px" />
+
+            <TextView
+                android:id="@+id/dateAndTimeText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/locationText"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="#666666"
+                android:textSize="14px" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

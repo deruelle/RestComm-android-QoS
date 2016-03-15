@@ -1,0 +1,150 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${packageName}.${activityClass}" >
+
+     <!-- Action bar -->
+    
+       <RelativeLayout
+            android:id="@+id/topactionbarLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="96px"
+            android:background="@color/title_background" >
+
+            <ImageButton
+                android:id="@+id/actionBarBackButton"
+                android:layout_width="64px"
+                android:layout_height="96px"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:onClick="onExit"
+                android:src="@drawable/ic_action_back_icon" />
+
+            <ImageView
+                android:id="@+id/actionBarLogo"
+                android:layout_width="60px"
+                android:layout_height="60px"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8px"
+                android:layout_toRightOf="@+id/actionBarBackButton"
+                android:background="@drawable/action_bar_logo"
+                android:onClick="onExitClicked" />
+
+            <TextView
+                android:id="@+id/actionbartitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="6px"
+                android:layout_toRightOf="@+id/actionBarLogo"
+                android:onClick="onMappingOptions"
+                android:text="@string/transitsampling_listview_title"
+                android:textColor="#666666"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/actionbarSettingsButton"
+                android:layout_width="64px"
+                android:layout_height="64px"
+                android:layout_alignBottom="@+id/actionbarHistoryIcon"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/actionbarHistoryIcon"
+                android:layout_marginRight="110px"
+                android:background="@drawable/settings_white"
+                android:visibility="gone"
+                android:onClick="onSettingsClicked" />
+
+            <Button
+                android:id="@+id/actionbarHistoryIcon"
+                android:layout_width="64px"
+                android:layout_height="64px"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/actionBarLogo"
+                android:layout_marginLeft="15px"
+                android:layout_marginRight="25px"
+                android:background="@drawable/history_white"
+                android:visibility="gone"
+                android:onClick="onHistoryClicked" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/topactionbarLine"
+            android:layout_width="fill_parent"
+            android:layout_height="4px"
+            android:layout_below="@+id/topactionbarLayout"
+            android:background="#3399cc" />
+        
+        <RelativeLayout
+            android:id="@+id/menuLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="92px"
+            android:layout_below="@+id/topactionbarLine"
+            android:gravity="center_vertical" >
+            
+            <ImageView 
+                android:id="@+id/seperator1"
+                android:layout_width="2px"
+            	android:layout_height="70px" 
+				android:layout_marginLeft="15px"
+				android:layout_marginTop="10px"
+            	android:background="#888888"
+            	android:layout_toRightOf="@+id/checkImageView" />
+            
+            <TextView 
+                android:id="@+id/selectedTextView"
+                android:layout_width="wrap_content"
+            	android:layout_height="fill_parent" 
+				android:layout_marginLeft="15px"
+				android:gravity="center_vertical"
+				android:textSize="18sp"
+            	android:layout_toRightOf="@+id/seperator1" 
+            	android:text="@string/transitsampling_station_selected"/>
+            
+            <ImageView 
+                android:id="@+id/seperator2"
+                android:layout_width="2px"
+            	android:layout_height="70px" 
+				android:layout_marginRight="15px"
+				android:layout_marginTop="10px"
+            	android:background="#888888"
+            	android:layout_toLeftOf="@+id/continueTextView" />
+
+            <TextView
+                android:id="@+id/continueTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15px"
+                android:gravity="center_vertical"
+                android:text="@string/transitsampling_continue" 
+                android:textSize="18sp"
+                android:onClick="onContinue"
+                android:clickable="true" />
+
+            <ImageView
+                android:id="@+id/checkImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10px"
+                android:background="@drawable/check_mark_ok" />
+            
+         </RelativeLayout>
+         
+         <RelativeLayout
+            android:id="@+id/topactionbarLine2"
+            android:layout_width="fill_parent"
+            android:layout_height="4px"
+            android:layout_below="@+id/menuLayout"
+            android:background="#3399cc" />
+	        
+		<ListView
+	        android:id="@+id/transitListView"
+	        android:layout_height="wrap_content"
+	        android:layout_width="match_parent" 
+	        android:layout_below="@+id/topactionbarLine2">
+	    </ListView>
+
+</RelativeLayout>

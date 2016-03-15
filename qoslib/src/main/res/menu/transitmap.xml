@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+   
+    <item android:id="@+id/sliding_menu"
+          android:icon="@drawable/drawer_icon" />
+   
+    <item android:id="@+id/icon"
+          android:icon="@drawable/train_icon_white"  />
+    
+     <item android:id="@+id/text"
+          android:title="@string/transitsampling_depart_from" />
+   
+    <item android:id="@+id/problem"
+          android:icon="@drawable/alert_sample_active"  />
+
+</menu>

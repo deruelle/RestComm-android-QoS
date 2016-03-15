@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/compare_webstats"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:weightSum="1"
+    android:orientation="vertical" >
+
+    <!--
+         <com.cortxt.app.MMC.ActivitiesOld.CustomViews.RankingStatChartNew
+        android:id="@+id/stats_chart"
+        android:layout_width="300px"
+        android:layout_height="fill_parent"
+        android:background="#ff00ff" />
+
+    <com.cortxt.app.MMC.ActivitiesOld.CustomViews.RankingStatChartNew
+        android:id="@+id/stats_chart"
+        android:layout_width="300px"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="100px"
+        android:background="#ffff00" />
+    -->
+
+    <com.cortxt.app.MMC.ActivitiesOld.CustomViews.Atomic.CompareTitleView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:text="@string/mystats_ranking" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:weightSum="1.0"
+        android:layout_weight="0.85" >
+
+		<View 
+            android:layout_width="0dip"
+			android:layout_height="fill_parent"
+			android:background="#0000"
+			android:layout_weight="0.05"/>
+        
+                
+        <com.cortxt.app.MMC.ActivitiesOld.CustomViews.Atomic.RankingCatView
+            android:id="@+id/stats_chart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3" >
+        </com.cortxt.app.MMC.ActivitiesOld.CustomViews.Atomic.RankingCatView>
+
+        <com.cortxt.app.MMC.ActivitiesOld.CustomViews.Atomic.RankingCatView
+            android:id="@+id/stats_chart2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/stats_chart"
+            android:layout_weight="0.3" >
+        </com.cortxt.app.MMC.ActivitiesOld.CustomViews.Atomic.RankingCatView>
+
+        <com.cortxt.app.MMC.ActivitiesOld.CustomViews.Atomic.RankingCatView
+            android:id="@+id/stats_chart3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/stats_chart2"
+            android:layout_weight="0.3"
+            android:tag="rank3" >
+        </com.cortxt.app.MMC.ActivitiesOld.CustomViews.Atomic.RankingCatView>
+    </LinearLayout>
+
+</LinearLayout>

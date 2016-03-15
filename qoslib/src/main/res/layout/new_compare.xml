@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/centralBackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAEAEA" >
+
+    <RelativeLayout
+        android:id="@+id/scallingWrapperLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:id="@+id/topactionbarLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="96px"
+            android:background="@drawable/actionbar_gradient" >
+
+            <ImageButton
+                android:id="@+id/actionBarBackButton"
+                android:layout_width="64px"
+                android:layout_height="96px"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_action_back_icon"
+                android:background="@drawable/actionbar_gradient"
+                android:onClick="backActionClicked" />
+
+            <ImageView
+                android:id="@+id/actionBarLogo"
+                android:layout_width="60px"
+                android:layout_height="60px"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8px"
+                android:layout_toRightOf="@+id/actionBarBackButton"
+                android:background="@drawable/action_bar_logo" 
+                android:onClick="backActionClicked"
+                />
+
+            <TextView
+                android:id="@+id/actionbartitle"
+                android:layout_width="520px"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5px"
+                android:layout_toRightOf="@+id/actionBarLogo"
+                android:text="Compare"
+                android:textColor="#666666"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/actionbarShareIcon"
+                android:layout_width="64px"
+                android:layout_height="64px"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="630px"
+                android:background="@drawable/ic_action_share_icon"
+                android:onClick="shareClicked" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/topactionbarLine"
+            android:layout_width="fill_parent"
+            android:layout_height="4px"
+            android:layout_below="@+id/topactionbarLayout"
+            android:background="#3399cc" />
+
+        <RelativeLayout
+            android:id="@+id/compare_tabs"
+            android:layout_width="fill_parent"
+            android:layout_height="80px"
+            android:layout_below="@+id/topactionbarLine"
+            android:background="@color/new_compare_tabs_bg" >
+
+            <View
+                android:id="@+id/actionSeparator"
+                android:layout_width="fill_parent"
+                android:layout_height="0px"
+                android:background="#5F000000" />
+
+            <TextView
+                android:id="@+id/statText0"
+                android:layout_width="238px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/actionSeparator"
+                android:gravity="center"
+                android:text="@string/mystats_stat0"
+                android:textColor="#5D5D5D"
+                android:textSize="14dp" />
+
+            <View
+                android:id="@+id/Separator0"
+                android:layout_width="2px"
+                android:layout_height="40px"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/statText0"
+                android:background="#5F000000" />
+
+            <TextView
+                android:id="@+id/statText1"
+                android:layout_width="238px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/actionSeparator"
+                android:layout_toRightOf="@+id/Separator0"
+                android:gravity="center"
+                android:text="@string/mystats_stat1"
+                android:textColor="#5D5D5D"
+                android:textSize="14dp" />
+
+            <View
+                android:id="@+id/Separator1"
+                android:layout_width="2px"
+                android:layout_height="40px"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/statText1"
+                android:background="#5F000000" />
+
+            <TextView
+                android:id="@+id/statText2"
+                android:layout_width="238px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/actionSeparator"
+                android:layout_toRightOf="@+id/Separator1"
+                android:gravity="center"
+                android:text="@string/mystats_stat2"
+                android:textColor="#5D5D5D"
+                android:textSize="14dp" />
+
+            <View
+                android:id="@+id/Separator2"
+                android:layout_width="2px"
+                android:layout_height="40px"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/statText2"
+                android:background="#5F000000" >
+            </View>
+
+            <TextView
+                android:id="@+id/statText3"
+                android:layout_width="238px"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/actionSeparator"
+                android:layout_toRightOf="@+id/Separator2"
+                android:gravity="center"
+                android:text="@string/mystats_stat3"
+                android:textColor="#5D5D5D"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:id="@+id/StatIndicator0"
+                android:layout_width="238px"
+                android:layout_height="15px"
+                android:layout_alignParentBottom="true"
+                android:background="#FF0099CC"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/StatIndicator1"
+                android:layout_width="238px"
+                android:layout_height="15px"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/Separator0"
+                android:background="#FF0099CC" />
+
+            <ImageView
+                android:id="@+id/StatIndicator2"
+                android:layout_width="238px"
+                android:layout_height="15px"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/Separator1"
+                android:background="#FF0099CC"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/StatIndicator3"
+                android:layout_width="238px"
+                android:layout_height="15px"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/Separator2"
+                android:background="#FF0099CC"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <ViewFlipper
+            android:id="@+id/flipper"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/compare_tabs" >
+
+            <com.cortxt.app.MMC.ActivitiesOld.CustomViews.StatChartView
+                android:id="@+id/stats_webview0"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical" >
+
+                <include
+                    android:id="@+id/stats_webview01"
+                    layout="@layout/rankstatchart" />
+            </com.cortxt.app.MMC.ActivitiesOld.CustomViews.StatChartView>
+
+            <com.cortxt.app.MMC.ActivitiesOld.CustomViews.StatChartView
+                android:id="@+id/stats_webview1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <include
+                    android:id="@+id/stats_webview02"
+                    layout="@layout/mystatchart" />
+            </com.cortxt.app.MMC.ActivitiesOld.CustomViews.StatChartView>
+
+            <com.cortxt.app.MMC.ActivitiesOld.CustomViews.StatChartView
+                android:id="@+id/stats_webview2"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:gravity="center" >
+
+                <include
+                    android:id="@+id/stats_webview03"
+                    layout="@layout/callstatchart" />
+            </com.cortxt.app.MMC.ActivitiesOld.CustomViews.StatChartView>
+
+            <com.cortxt.app.MMC.ActivitiesOld.CustomViews.StatChartView
+                android:id="@+id/stats_webview3"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center" >
+
+                <include
+                    android:id="@+id/stats_webview04"
+                    layout="@layout/speedstatchart" />
+            </com.cortxt.app.MMC.ActivitiesOld.CustomViews.StatChartView>
+        </ViewFlipper>
+
+        <RelativeLayout
+            android:id="@+id/arrowslayout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/compare_tabs" >
+
+            <ImageButton
+                android:id="@+id/mystats_leftArrow"
+                android:layout_width="49px"
+                android:layout_height="48px"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10px"
+                android:background="@drawable/mystats_arrowleft"
+                android:contentDescription="@string/mystats_arrowleft"
+                android:onClick="leftClicked" />
+
+            <ImageButton
+                android:id="@+id/mystats_rightArrow"
+                android:layout_width="49px"
+                android:layout_height="48px"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10px"
+                android:background="@drawable/mystats_arrowright"
+                android:contentDescription="@string/mystats_arrowright"
+                android:onClick="rightClicked" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/locationAndTimeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="150px"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:id="@+id/radiusText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="#666666"
+                android:textSize="15dp" />
+            <TextView
+                android:id="@+id/locationText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/radiusText"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="#666666"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/dateAndTimeText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/locationText"
+                android:gravity="center_horizontal"
+                android:text=" "
+                android:textColor="#666666"
+                android:textSize="18dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

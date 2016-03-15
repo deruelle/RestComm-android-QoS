@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+android:orientation="vertical"
+android:id="@+id/compare_webstats">
+
+    <FrameLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+        <WebView
+	    android:id="@+id/stats_webview"
+	    android:layout_above="@+id/stats_legend"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"/>
+        
+        
+        <com.cortxt.app.MMC.ActivitiesOld.CustomViews.LegendViewNew
+				android:id="@+id/stats_legend"
+				android:layout_width="fill_parent"
+				android:layout_height="80dp"
+				android:layout_gravity="bottom"
+				android:paddingTop="0dp"
+				android:paddingBottom="0dp"
+				android:paddingLeft="18dp"
+				android:paddingRight="8dp"
+			/>
+    </FrameLayout>
+    
+    
+    
+
+</RelativeLayout>

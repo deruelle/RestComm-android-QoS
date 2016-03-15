@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+android:background="@drawable/background"
+android:id="@+id/mystats_container">
+
+    <FrameLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_centerInParent="true">
+        <WebView
+	    android:id="@+id/mystats_webview"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"/>
+        
+        <ProgressBar
+        android:id="@+id/mystats_loadingindicator"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_gravity="center"
+    	android:indeterminateOnly="true"/>
+    </FrameLayout>
+    
+    <LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="190dp"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_centerHorizontal="true"
+    android:layout_alignParentBottom="true">
+        <com.cortxt.app.MMC.ActivitiesOld.CustomViews.LegendViewNew
+				android:id="@+id/stats_legend"
+				android:layout_width="fill_parent"
+				android:layout_height="80dp"
+				android:layout_weight="1"
+				android:paddingTop="0dp"
+				android:paddingBottom="0dp"
+				android:paddingLeft="18dp"
+				android:paddingRight="8dp"
+			/>
+        <TextView
+		    android:id="@+id/mystats_timeandlocation"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:gravity="center_horizontal"
+		    android:ellipsize="end"
+		    android:singleLine="true"
+		    android:paddingTop="0dp"/>
+        <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="30dp"
+    android:paddingTop="6dp"
+    android:orientation="horizontal"
+    android:gravity="center_horizontal"
+    android:id="@+id/mystats_bullets"
+    >
+        
+        <ImageView
+        android:id="@+id/mystats_bullet_1"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+        android:src="@drawable/mystats_bullet_inactive"
+        android:contentDescription="@string/mystats_screen_indicator"
+        android:padding="3dp"/>
+        
+        <ImageView
+        android:id="@+id/mystats_bullet_2"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+        android:src="@drawable/mystats_bullet_inactive"
+        android:contentDescription="@string/mystats_screen_indicator"
+        android:padding="3dp"/>
+        
+        <ImageView    
+        android:id="@+id/mystats_bullet_3"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+        android:src="@drawable/mystats_bullet_inactive"
+        android:contentDescription="@string/mystats_screen_indicator"
+        android:padding="3dp"/>
+    </LinearLayout>
+    <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="40dp"
+    android:paddingTop="0dp"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    />
+    </LinearLayout>
+    
+	
+    <ImageButton
+    android:id="@+id/mystats_leftArrow"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_centerVertical="true"
+    android:background="@drawable/mystats_arrowleft"
+    android:contentDescription="@string/mystats_arrowleft"
+    android:onClick="leftClicked"/>
+    
+    <ImageButton
+    android:id="@+id/mystats_rightArrow"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:layout_centerVertical="true"
+    android:background="@drawable/mystats_arrowright"
+    android:contentDescription="@string/mystats_arrowright"
+    android:onClick="rightClicked"/>
+    
+    <LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical"
+    android:id="@+id/mystats_shareinfo"
+    android:visibility="gone">
+	    <TextView
+	    android:id="@+id/speedtest_sharetext"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:padding="5dp"
+	    android:drawableLeft="@drawable/speedtest_mmclogo"
+	    android:drawablePadding="5dp"
+	    android:gravity="center_vertical"/>
+        
+        <ImageView
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:src="@drawable/speedtest_followbanner"
+	    android:contentDescription="@string/speedtest_shareimage"/>
+    </LinearLayout>
+    
+    <LinearLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:baselineAligned="false"
+    android:id="@+id/mystats_buttons">
+        <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+	        <ImageButton
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentBottom="true"
+		    android:background="@drawable/mystats_share"
+		    android:contentDescription="@string/mystats_share"
+		    android:onClick="shareClicked"/>
+
+	        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+	        android:paddingBottom="8dp"
+	        android:layout_marginLeft="78dp"
+            android:text="@string/mystats_share"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+	    </RelativeLayout>
+	    
+        <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+	        <ImageButton
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentBottom="true"
+		    android:background="@drawable/mystats_history"
+		    android:contentDescription="@string/mystats_history"
+		    android:onClick="historyClicked"/>
+
+	        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:paddingBottom="8dp"
+	        android:paddingLeft="76dp"
+            android:text="@string/mystats_history"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+	    </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

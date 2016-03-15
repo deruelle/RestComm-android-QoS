@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFFFFF" >
+
+    <RelativeLayout
+        android:id="@+id/wrapperForScaling"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" 
+        >
+
+        <ImageView
+            android:id="@+id/actionBarLogo"
+            android:layout_width="60px"
+            android:layout_height="60px"
+            android:layout_marginLeft="48px"
+            android:layout_marginTop="28px"
+            android:background="@drawable/action_bar_logo"
+            android:onClick="actionBarbackClik" />
+
+        <TextView
+            android:id="@+id/actionbartitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/actionBarLogo"
+            android:layout_marginLeft="10px"
+            android:layout_marginTop="5px"
+            android:layout_toRightOf="@+id/actionBarLogo"
+            android:text="Dashboard"
+            android:textColor="#666666"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/actionbarMenuIcon"
+            android:layout_width="64px"
+            android:layout_height="64px"
+            android:layout_marginLeft="640px"
+            android:layout_marginTop="28px"
+            android:background="@drawable/new_ic_action_menu_icon"
+            android:onClick="MenuButtonClickListener" />
+
+        <View
+            android:id="@+id/centralBackground"
+            android:layout_width="fill_parent"
+            android:layout_height="825px"
+            android:layout_marginTop="107px"
+            android:background="@drawable/bg_full" />
+
+        <Button
+            android:id="@+id/mapIcon"
+            android:layout_width="168px"
+            android:layout_height="168px"
+            android:layout_marginLeft="120px"
+            android:layout_marginTop="420px"
+            android:background="@drawable/dashboard_mycoverage_default"
+            android:onClick="myCoverageClicked" />
+
+        <TextView
+            android:id="@+id/mapText"
+            android:layout_width="168px"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/mapIcon"
+            android:layout_below="@+id/mapIcon"
+            android:layout_marginTop="10px"
+            android:gravity="center_horizontal"
+            android:text="@string/dashboard_maps"
+            android:textColor="#4D4D4D"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/speedIcon"
+            android:layout_width="168px"
+            android:layout_height="168px"
+            android:layout_alignTop="@+id/mapIcon"
+            android:layout_marginLeft="144px"
+            android:layout_toRightOf="@+id/mapIcon"
+            android:background="@drawable/dashboard_speedtest_default"
+            android:onClick="speedTestClicked" />
+
+        <TextView
+            android:id="@+id/SpeedText"
+            android:layout_width="200px"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/speedIcon"
+            android:layout_below="@+id/speedIcon"
+            android:layout_marginLeft="-16px"
+            android:layout_marginTop="10px"
+            android:gravity="center_horizontal"
+            android:text="@string/dashboard_speed"
+            android:textColor="#4D4D4D"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/CompareStatsIcon"
+            android:layout_width="168px"
+            android:layout_height="168px"
+            android:layout_alignLeft="@+id/mapIcon"
+            android:layout_below="@+id/mapText"
+            android:layout_marginTop="50px"
+            android:background="@drawable/dashboard_mystats_default"
+            android:onClick="myStatsClicked" />
+
+        <TextView
+            android:id="@+id/CompareText"
+            android:layout_width="200px"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/CompareStatsIcon"
+            android:layout_below="@+id/CompareStatsIcon"
+            android:layout_marginLeft="-16px"
+            android:layout_marginTop="10px"
+            android:gravity="center_horizontal"
+            android:text="@string/dashboard_compare"
+            android:textColor="#4D4D4D"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/TroubleTweetIcon"
+            android:layout_width="168px"
+            android:layout_height="168px"
+            android:layout_alignTop="@+id/CompareStatsIcon"
+            android:layout_marginLeft="144px"
+            android:layout_toRightOf="@+id/CompareStatsIcon"
+            android:background="@drawable/dashboard_troublespot_default"
+            android:onClick="troubleSpotClicked" />
+
+        <TextView
+            android:id="@+id/TroubleTweetText"
+            android:layout_width="250px"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TroubleTweetIcon"
+            android:layout_below="@+id/TroubleTweetIcon"
+            android:layout_marginLeft="-41px"
+            android:layout_marginTop="10px"
+            android:gravity="center_horizontal"
+            android:text="@string/dashboard_trouble"
+            android:textColor="#4D4D4D"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/advertisement"
+            android:layout_width="720px"
+            android:layout_height="210px"
+            android:layout_below="@+id/centralBackground"
+            android:layout_centerHorizontal="true" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="150px"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/dashboard_didyouknow"
+                android:textColor="@color/title_blue"
+                android:textSize="23dp"
+                android:textStyle="bold" />
+
+            <com.cortxt.app.MMC.ActivitiesOld.CustomViews.Odometer
+                android:id="@+id/odometer"
+                android:layout_width="400px"
+                android:layout_height="80px"
+                android:gravity="center_horizontal"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/dashboard_TextViewDidYouKnow"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14px"
+                android:layout_marginLeft="10px"
+                android:layout_marginRight="10px"
+                android:gravity="center_horizontal"
+                android:textColor="@color/white"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

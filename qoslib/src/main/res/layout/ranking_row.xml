@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="245px" >
+
+    <RelativeLayout
+        android:id="@+id/wrapper"
+        android:layout_width="660px"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="40px"
+        android:layout_marginTop="20px" >
+
+        <ImageView
+            android:id="@+id/ribbonIcon"
+            android:layout_width="37px"
+            android:layout_height="49px"
+            android:background="@drawable/ribbon_icon" />
+
+        <TextView
+            android:id="@+id/ribbonText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:layout_toRightOf="@+id/ribbonIcon"
+            android:text="Mejor Cobertura"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:id="@+id/subView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ribbonText"
+            android:layout_marginLeft="150px" >
+
+            <ImageView
+                android:id="@+id/rankingIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/claro_logo" />
+
+            <TextView
+                android:id="@+id/serialOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80px"
+                android:layout_marginTop="20px"
+                android:layout_toRightOf="@+id/rankingIcon"
+                android:text="1"
+                android:textColor="#999999"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/percentageOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/serialOne"
+                android:layout_marginLeft="30px"
+                android:layout_toRightOf="@+id/serialOne"
+                android:text="89%"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/firstName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/percentageOne"
+                android:layout_marginLeft="20px"
+                android:layout_toRightOf="@+id/percentageOne"
+                android:text="Claro"
+                android:textColor="#000000"
+                android:textSize="20dp" />
+
+            <View
+                android:id="@+id/firstSeparator"
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:layout_below="@+id/percentageOne"
+                android:layout_marginLeft="60px"
+                android:layout_toRightOf="@+id/rankingIcon"
+                android:background="#5F000000" />
+
+            <TextView
+                android:id="@+id/serialTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/serialOne"
+                android:layout_below="@+id/firstSeparator"
+                android:text="2"
+                android:textColor="#999999"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/percentageTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/serialTwo"
+                android:layout_marginLeft="30px"
+                android:layout_toRightOf="@+id/serialTwo"
+                android:text="73%"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/secondName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/percentageTwo"
+                android:layout_marginLeft="20px"
+                android:layout_toRightOf="@+id/percentageTwo"
+                android:text="Movistar"
+                android:textColor="#000000"
+                android:textSize="20dp" />
+
+            <View
+                android:id="@+id/secondSeparator"
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:layout_alignLeft="@+id/firstSeparator"
+                android:layout_below="@+id/percentageTwo"
+                android:background="#5F000000" />
+
+            <TextView
+                android:id="@+id/serialThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/serialTwo"
+                android:layout_below="@+id/secondSeparator"
+                android:text="3"
+                android:textColor="#999999"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/percentageThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/serialThree"
+                android:layout_marginLeft="30px"
+                android:layout_toRightOf="@+id/serialThree"
+                android:text="73%"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/thirdName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/percentageThree"
+                android:layout_marginLeft="20px"
+                android:layout_toRightOf="@+id/percentageThree"
+                android:text="Tigo"
+                android:textColor="#000000"
+                android:textSize="20dp" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/rowSeparator"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#7F000000"
+            android:layout_marginTop="222px"
+             />
+    </RelativeLayout>
+
+</RelativeLayout>

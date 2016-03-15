@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/screen_container"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#dddddd"
+    android:splitMotionEvents="false" >
+
+    <RelativeLayout
+        android:id="@+id/topactionbarLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="96px"
+        android:layout_alignParentTop="true"
+        android:background="@color/title_background" >
+
+        <ImageView
+            android:id="@+id/backBtnPlaceHolder"
+            android:layout_width="wrap_content"
+            android:padding="10px"
+            android:src="@drawable/ic_action_back_icon"
+            android:layout_height="fill_parent"
+            android:visibility="invisible"
+            android:layout_centerVertical="true" />
+
+        <ImageView
+            android:id="@+id/actionBarLogo"
+            android:layout_width="60px"
+            android:layout_height="60px"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/backBtnPlaceHolder"
+            android:background="@drawable/action_bar_logo"
+            android:onClick="actionBarbackClik" />
+
+        <TextView
+            android:id="@+id/actionbartitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/actionBarLogo"
+            android:text="@string/dashboard_title"
+            android:textColor="#666666"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/actionbarMenuIcon"
+            android:layout_width="96px"
+            android:layout_height="96px"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:layout_marginRight="10dp"
+            android:onClick="MenuButtonClickListener" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/topactionbarLine"
+        android:layout_width="fill_parent"
+        android:layout_height="4px"
+        android:layout_below="@+id/topactionbarLayout"
+        android:background="#3399cc" />
+
+    <RelativeLayout
+        android:id="@+id/wrapperForScaling"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/topactionbarLine" >
+
+        <View
+            android:id="@+id/dashBackground"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/background" />
+
+        <ImageView
+            android:id="@+id/advertisement"
+            android:layout_width="720px"
+            android:layout_height="210px"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"/>
+
+        <LinearLayout
+            android:id="@+id/didyouknow"
+            android:layout_width="fill_parent"
+            android:layout_height="225px"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="5dp" >
+
+            <TextView
+                android:id="@+id/dashboard_titleDidYouKnow"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10px"
+                android:gravity="center_horizontal"
+                android:text="@string/dashboard_didyouknow"
+                android:textColor="#4d4d4d"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <com.cortxt.app.MMC.ActivitiesOld.CustomViews.Odometer
+                android:id="@+id/odometer"
+                android:layout_width="400px"
+                android:layout_height="70px"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/dashboard_TextViewDidYouKnow"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10px"
+                android:layout_marginRight="10px"
+                android:gravity="center_horizontal"
+                android:textColor="#666666"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+		<android.support.v4.view.ViewPager
+			android:id="@+id/viewPager"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_centerHorizontal="true"
+			android:gravity="center"
+			android:layout_above="@id/didyouknow"/>
+
+		<com.cortxt.app.MMC.ActivitiesOld.CustomViews.CirclePageIndicator
+	        android:id="@+id/indicator"
+	        android:layout_above="@id/didyouknow"
+	        android:layout_height="wrap_content"
+	        android:layout_width="fill_parent"/>
+
+        </RelativeLayout>
+
+</RelativeLayout>

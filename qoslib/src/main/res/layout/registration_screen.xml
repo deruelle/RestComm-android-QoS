@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/screen_container"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background" >
+
+    <RelativeLayout
+        android:id="@+id/topactionbarLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="96px"
+        android:layout_alignParentTop="true"
+        android:background="@color/title_background"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/actionBarBackButton"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:src="@drawable/ic_action_back_icon"
+            android:background="@null"
+            android:padding="10px"/>
+        
+        <ImageView
+            android:id="@+id/actionBarLogo"
+            android:layout_width="60px"
+            android:layout_height="60px"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/actionBarBackButton"
+            android:background="@drawable/action_bar_logo" />
+
+        <TextView
+            android:id="@+id/actionbartitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/actionBarLogo"
+            android:text="@string/dashboard_register"
+            android:textColor="#666666"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/topactionbarLine"
+        android:layout_width="fill_parent"
+        android:layout_height="4px"
+        android:layout_below="@+id/topactionbarLayout"
+        android:background="#3399cc" />
+
+    <RelativeLayout
+        android:id="@+id/wrapperForScaling"
+        android:layout_width="fill_parent"
+        android:layout_height="850px"
+        android:layout_below="@+id/topactionbarLine" >
+
+        <TextView
+            android:id="@+id/emailEnterStaticText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="80px"
+            android:gravity="center"
+            android:text="@string/getstarted_enteremail"
+            android:textColor="#222222"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/emailEditBox"
+            android:layout_width="450px"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/emailEnterStaticText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30px"
+            android:inputType="textEmailAddress"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/privacyTextOne"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/emailEditBox"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="70px"
+            android:text="@string/privacy_registration_text"
+            android:textColor="#222222"
+            android:textSize="14sp" />
+
+        <CheckBox
+            android:id="@+id/acceptCheckBox"
+            android:layout_width="90px"
+            android:layout_height="90px"
+            android:layout_below="@+id/emailEditBox"
+            android:layout_marginTop="50px"
+            android:layout_marginLeft="70px"
+             />
+
+        <TextView
+            android:id="@+id/AcceptAgreementText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/acceptCheckBox"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20px"
+            android:layout_toRightOf="@+id/acceptCheckBox"
+            android:text="@string/getstarted_acceptterms"
+            android:textColor="#222222"
+            android:textSize="18dp" />
+    </RelativeLayout>
+
+     <LinearLayout
+            android:id="@+id/bottomLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="5dp" >
+	<Button
+            android:id="@+id/startButton"
+            android:layout_width="480px"
+            android:layout_height="100px"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/start_button_selector"
+            android:gravity="center"
+            android:onClick="registerClicked"
+            android:text="@string/getstarted_continue"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp" />
+	
+
+        <TextView
+            android:id="@+id/MoreAboutPolicyText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/startButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/disclaimer"
+            android:textColor="#222222"
+            android:textSize="14dp" />
+        </LinearLayout>
+</RelativeLayout>
